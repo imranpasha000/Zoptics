@@ -50,6 +50,16 @@
         });
     });
 
+
+    document.addEventListener('DOMContentLoaded', function() {
+  const searchButton = document.getElementById('searchButton');
+  const searchBar = document.getElementById('searchBar');
+
+  searchButton.addEventListener('click', function() {
+    searchBar.classList.toggle('hidden'); // Toggles the 'hidden' class
+  });
+});
+
     /*------------------
 		Navigation
 	--------------------*/

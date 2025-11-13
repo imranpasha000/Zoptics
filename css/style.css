@@ -403,11 +403,23 @@ ol {
 	cursor: pointer;
 }
 
-.header__logo {
+.header__<a href="URL_DESTINATION" class="block">
+    <div class="flex flex-col leading-none">
+        <span class="text-lg tracking-widest font-light">v o g u e</span>
+        <span class="text-xs tracking-[0.2em] text-gray-500">eyewear</span>
+    </div>
+</a>
+ {
 	padding: 30px 0;
 }
 
-.header__logo a {
+.header__<a href="URL_DESTINATION" class="block">
+    <div class="flex flex-col leading-none">
+        <span class="text-lg tracking-widest font-light">v o g u e</span>
+        <span class="text-xs tracking-[0.2em] text-gray-500">eyewear</span>
+    </div>
+</a>
+ a {
 	display: inline-block;
 }
 
@@ -1945,11 +1957,23 @@ ol {
 	margin-bottom: 30px;
 }
 
-.footer__about .footer__logo {
+.footer__about .footer__<a href="URL_DESTINATION" class="block">
+    <div class="flex flex-col leading-none">
+        <span class="text-lg tracking-widest font-light">v o g u e</span>
+        <span class="text-xs tracking-[0.2em] text-gray-500">eyewear</span>
+    </div>
+</a>
+ {
 	margin-bottom: 30px;
 }
 
-.footer__about .footer__logo a {
+.footer__about .footer__<a href="URL_DESTINATION" class="block">
+    <div class="flex flex-col leading-none">
+        <span class="text-lg tracking-widest font-light">v o g u e</span>
+        <span class="text-xs tracking-[0.2em] text-gray-500">eyewear</span>
+    </div>
+</a>
+ a {
 	display: inline-block;
 }
 
