@@ -11,7 +11,7 @@
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
-    rel="stylesheet">
+        rel="stylesheet">
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -60,83 +60,103 @@
     </div>
     <!-- Offcanvas Menu End -->
 
-    <!-- Header Section Begin -->
-    <header class="header">
-        <div class="header__top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-7">
-                        <div class="header__top__left">
-                            <p>Free shipping, 30-day return or refund guarantee.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-5">
-                        <div class="header__top__right">
-                            <div class="header__top__links">
-                                <a href="#">Sign in</a>
-                                <a href="#">FAQs</a>
-                            </div>
-                            <div class="header__top__hover">
-                                <span>Usd <i class="arrow_carrot-down"></i></span>
-                                <ul>
-                                    <li>USD</li>
-                                    <li>EUR</li>
-                                    <li>USD</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Header Section start -->
+    <header class="border-b border-gray-200 bg-white sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
+
+            <!-- Logo -->
+            <a href="/" class="block flex-shrink-0 group">
+                <div class="flex flex-col transition-all duration-300">
+                    <span
+                        class="text-base sm:text-lg font-medium text-black group-hover:text-gray-700 transition-colors">Z
+                        O P T I C S</span>
+                    <span
+                        class="text-xs tracking-[0.2em] text-gray-500 group-hover:text-gray-700 transition-colors">eyewear</span>
+                </div>
+            </a>
+
+            <!-- Navbar (Desktop) -->
+            <nav class="hidden md:flex items-center space-x-6 lg:space-x-10">
+                <button class="tab-btn text-gray-800 hover:text-black font-medium relative transition-colors"
+                    data-tab="sunglasses">Sunglasses</button>
+                <button class="tab-btn text-gray-800 hover:text-black font-medium relative transition-colors"
+                    data-tab="eyeglasses">Eyeglasses</button>
+                <button class="tab-btn text-gray-800 hover:text-black font-medium relative transition-colors"
+                    data-tab="newarrivals">New Arrivals</button>
+            </nav>
+
+            <!-- Right Icons -->
+            <div class="flex items-center space-x-2 sm:space-x-4">
+                <!-- Search Icon -->
+                <button id="searchButton" class="p-2 hover:text-gray-700 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M21 21l-4.35-4.35M17 10.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" />
+                    </svg>
+                </button>
+
+                <!-- Mobile menu button -->
+                <button id="menu-btn" class="md:hidden p-2 hover:bg-gray-100 rounded transition-colors">
+                    <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 hidden" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Search Bar (Hidden by default) -->
+        <div id="searchBar" class="hidden border-t border-gray-200 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
+                <div class="flex items-center space-x-2">
+                    <input type="text" placeholder="Search for sunglasses, eyeglasses..."
+                        class="flex-1 p-2 sm:p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black">
+                    <button
+                        class="px-4 sm:px-6 py-2 sm:py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors">Search</button>
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-3">
-                    <div class="header__<a href="URL_DESTINATION" class="block">
-    <div class="flex flex-col leading-none">
-        <span class="text-lg tracking-widest font-light">v o g u e</span>
-        <span class="text-xs tracking-[0.2em] text-gray-500">eyewear</span>
-    </div>
-</a>
-">
-                        <a href="./index.html"><img src="img/<a href="URL_DESTINATION" class="block">
-    <div class="flex flex-col leading-none">
-        <span class="text-lg tracking-widest font-light">v o g u e</span>
-        <span class="text-xs tracking-[0.2em] text-gray-500">eyewear</span>
-    </div>
-</a>
-.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <nav class="header__menu mobile-menu">
-                        <ul>
-                            <li><a href="./index.html">Home</a></li>
-                            <li class="active"><a href="./shop.html">Shop</a></li>
-                            <li><a href="#">Pages</a>
-                                <ul class="dropdown">
-                                    <li><a href="./about.html">About Us</a></li>
-                                    <li><a href="./shop-details.html">Shop Details</a></li>
-                                    <li><a href="./shopping-cart.html">Shopping Cart</a></li>
-                                    <li><a href="./checkout.html">Check Out</a></li>
-                                    <li><a href="./blog-details.html">Blog Details</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="./blog.html">Blog</a></li>
-                            <li><a href="./contact.html">Contacts</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-lg-3 col-md-3">
-                    <div class="header__nav__option">
-                        <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
-                        <a href="#"><img src="img/icon/heart.png" alt=""></a>
-                        <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
-                        <div class="price">$0.00</div>
-                    </div>
-                </div>
+
+        <!-- Dropdown Section (Desktop) -->
+        <div id="submenu" class="hidden border-t border-gray-200 bg-white">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 py-6 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 text-center">
             </div>
-            <div class="canvas__open"><i class="fa fa-bars"></i></div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-white">
+            <nav class="flex flex-col py-2">
+                <button class="mobile-tab-btn text-left px-6 py-3 hover:bg-gray-50 transition-colors"
+                    data-tab="sunglasses">
+                    <span class="font-medium">Sunglasses</span>
+                </button>
+                <div id="mobile-submenu-sunglasses" class="hidden bg-gray-50 px-6 py-3">
+                    <div class="grid grid-cols-2 gap-3"></div>
+                </div>
+
+                <button class="mobile-tab-btn text-left px-6 py-3 hover:bg-gray-50 transition-colors"
+                    data-tab="eyeglasses">
+                    <span class="font-medium">Eyeglasses</span>
+                </button>
+                <div id="mobile-submenu-eyeglasses" class="hidden bg-gray-50 px-6 py-3">
+                    <div class="grid grid-cols-2 gap-3"></div>
+                </div>
+
+                <button class="mobile-tab-btn text-left px-6 py-3 hover:bg-gray-50 transition-colors"
+                    data-tab="newarrivals">
+                    <span class="font-medium">New Arrivals</span>
+                </button>
+                <div id="mobile-submenu-newarrivals" class="hidden bg-gray-50 px-6 py-3">
+                    <div class="grid grid-cols-2 gap-3"></div>
+                </div>
+            </nav>
         </div>
     </header>
     <!-- Header Section End -->
@@ -168,7 +188,7 @@
                     <div class="row">
                         <div class="col-lg-8 col-md-6">
                             <h6 class="coupon__code"><span class="icon_tag_alt"></span> Have a coupon? <a href="#">Click
-                            here</a> to enter your code</h6>
+                                    here</a> to enter your code</h6>
                             <h6 class="checkout__title">Billing Details</h6>
                             <div class="row">
                                 <div class="col-lg-6">
@@ -226,7 +246,7 @@
                                     <span class="checkmark"></span>
                                 </label>
                                 <p>Create an account by entering the information below. If you are a returning customer
-                                please login at the top of the page</p>
+                                    please login at the top of the page</p>
                             </div>
                             <div class="checkout__input">
                                 <p>Account Password<span>*</span></p>
@@ -242,7 +262,7 @@
                             <div class="checkout__input">
                                 <p>Order notes<span>*</span></p>
                                 <input type="text"
-                                placeholder="Notes about your order, e.g. special notes for delivery.">
+                                    placeholder="Notes about your order, e.g. special notes for delivery.">
                             </div>
                         </div>
                         <div class="col-lg-4 col-md-6">
@@ -267,7 +287,7 @@
                                     </label>
                                 </div>
                                 <p>Lorem ipsum dolor sit amet, consectetur adip elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua.</p>
+                                    ut labore et dolore magna aliqua.</p>
                                 <div class="checkout__input__checkbox">
                                     <label for="payment">
                                         Check Payment
@@ -296,26 +316,12 @@
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer__about">
-                        <div class="footer__<a href="URL_DESTINATION" class="block">
-    <div class="flex flex-col leading-none">
-        <span class="text-lg tracking-widest font-light">v o g u e</span>
-        <span class="text-xs tracking-[0.2em] text-gray-500">eyewear</span>
-    </div>
-</a>
-">
-                            <a href="#"><img src="img/footer-<a href="URL_DESTINATION" class="block">
-    <div class="flex flex-col leading-none">
-        <span class="text-lg tracking-widest font-light">v o g u e</span>
-        <span class="text-xs tracking-[0.2em] text-gray-500">eyewear</span>
-    </div>
-</a>
-.png" alt=""></a>
-                        </div>
-                        <p>The customer is at the heart of our unique business model, which includes design.</p>
-                        <a href="#"><img src="img/payment.png" alt=""></a>
-                    </div>
+                <div class="flex flex-col">
+                    <span
+                        class="text-base sm:text-lg font-medium text-white group-hover:text-gray-700 transition-colors">Z
+                        O P T I C S</span>
+                    <span
+                        class="text-xs tracking-[0.2em] text-white group-hover:text-gray-700 transition-colors">eyewear</span>
                 </div>
                 <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
                     <div class="footer__widget">
@@ -361,7 +367,7 @@
                                 document.write(new Date().getFullYear());
                             </script>2025
                             All rights reserved | This template is made with <i class="fa fa-heart-o"
-                            aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Zoptics</a>
+                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Zoptics</a>
                         </p>
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </div>

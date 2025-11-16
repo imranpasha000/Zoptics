@@ -224,3 +224,123 @@
     });
 
 })(jQuery);
+
+
+
+
+    /*------------------
+        Header
+    --------------------*/
+
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const mobileTabBtns = document.querySelectorAll('.mobile-tab-btn');
+        const submenu = document.getElementById('submenu');
+        const submenuGrid = submenu.querySelector('div');
+        const searchButton = document.getElementById('searchButton');
+        const searchBar = document.getElementById('searchBar');
+        
+        const tabData = {
+            sunglasses: [
+                { img: 'https://randomuser.me/api/portraits/women/1.jpg', name: 'Women' },
+                { img: 'https://randomuser.me/api/portraits/men/2.jpg', name: 'Men' },
+                { img: 'https://randomuser.me/api/portraits/women/3.jpg', name: 'Kids' },
+                { img: 'https://randomuser.me/api/portraits/men/4.jpg', name: 'Best Sellers' },
+            ],
+            eyeglasses: [
+                { img: 'https://randomuser.me/api/portraits/women/5.jpg', name: 'Classic' },
+                { img: 'https://randomuser.me/api/portraits/men/6.jpg', name: 'Trendy' },
+                { img: 'https://randomuser.me/api/portraits/women/7.jpg', name: 'Retro' },
+                { img: 'https://randomuser.me/api/portraits/men/8.jpg', name: 'Luxury' },
+            ],
+            newarrivals: [
+                { img: 'https://randomuser.me/api/portraits/women/9.jpg', name: 'New Women' },
+                { img: 'https://randomuser.me/api/portraits/men/10.jpg', name: 'New Men' },
+                { img: 'https://randomuser.me/api/portraits/women/11.jpg', name: 'New Kids' },
+                { img: 'https://randomuser.me/api/portraits/men/12.jpg', name: 'Limited Edition' },
+            ]
+        };
+        
+        // Desktop tabs
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tab = btn.dataset.tab;
+                const isActive = btn.classList.contains('border-b-2');
+                
+                // Remove underline from all
+                tabBtns.forEach(b => b.classList.remove('border-b-2', 'border-black'));
+                
+                if (isActive) {
+                    submenu.classList.add('hidden');
+                } else {
+                    btn.classList.add('border-b-2', 'border-black');
+                    
+                    submenuGrid.innerHTML = tabData[tab]
+                        .map(item => `
+                            <div class="flex flex-col items-center space-y-2 cursor-pointer hover:opacity-75 transition-opacity">
+                                <img src="${item.img}" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover" alt="${item.name}">
+                                <p class="text-sm text-gray-700">${item.name}</p>
+                            </div>
+                        `).join('');
+                    
+                    submenu.classList.remove('hidden');
+                }
+            });
+        });
+        
+        // Mobile tabs
+        mobileTabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tab = btn.dataset.tab;
+                const mobileSubmenu = document.getElementById(`mobile-submenu-${tab}`);
+                const isActive = !mobileSubmenu.classList.contains('hidden');
+                
+                // Hide all mobile submenus
+                document.querySelectorAll('[id^="mobile-submenu-"]').forEach(menu => {
+                    menu.classList.add('hidden');
+                });
+                
+                if (!isActive) {
+                    const grid = mobileSubmenu.querySelector('div');
+                    grid.innerHTML = tabData[tab]
+                        .map(item => `
+                            <div class="flex flex-col items-center space-y-2 cursor-pointer hover:opacity-75 transition-opacity">
+                                <img src="${item.img}" class="w-16 h-16 rounded-full object-cover" alt="${item.name}">
+                                <p class="text-xs text-gray-700">${item.name}</p>
+                            </div>
+                        `).join('');
+                    
+                    mobileSubmenu.classList.remove('hidden');
+                }
+            });
+        });
+        
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+            
+            // Close submenu when mobile menu closes
+            if (mobileMenu.classList.contains('hidden')) {
+                submenu.classList.add('hidden');
+                tabBtns.forEach(b => b.classList.remove('border-b-2', 'border-black'));
+            }
+        });
+        
+        // Search toggle
+        searchButton.addEventListener('click', () => {
+            searchBar.classList.toggle('hidden');
+        });
+        
+        // Close menus when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('header')) {
+                submenu.classList.add('hidden');
+                tabBtns.forEach(b => b.classList.remove('border-b-2', 'border-black'));
+            }
+        });
