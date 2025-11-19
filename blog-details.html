@@ -60,83 +60,103 @@
     </div>
     <!-- Offcanvas Menu End -->
 
-    <!-- Header Section Begin -->
-    <header class="header">
-        <div class="header__top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 col-md-7">
-                        <div class="header__top__left">
-                            <p>Free shipping, 30-day return or refund guarantee.</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-5">
-                        <div class="header__top__right">
-                            <div class="header__top__links">
-                                <a href="#">Sign in</a>
-                                <a href="#">FAQs</a>
-                            </div>
-                            <div class="header__top__hover">
-                                <span>Usd <i class="arrow_carrot-down"></i></span>
-                                <ul>
-                                    <li>USD</li>
-                                    <li>EUR</li>
-                                    <li>USD</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
+    <!-- Header Section start -->
+    <header class="border-b border-gray-200 bg-white sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
+
+            <!-- Logo -->
+            <a href="/" class="block flex-shrink-0 group">
+                <div class="flex flex-col transition-all duration-300">
+                    <span
+                        class="text-base sm:text-lg font-medium text-black group-hover:text-gray-700 transition-colors">Z
+                        O P T I C S</span>
+                    <span
+                        class="text-xs tracking-[0.2em] text-gray-500 group-hover:text-gray-700 transition-colors">eyewear</span>
+                </div>
+            </a>
+
+            <!-- Navbar (Desktop) -->
+            <nav class="hidden md:flex items-center space-x-6 lg:space-x-10">
+                <button class="tab-btn text-gray-800 hover:text-black font-medium relative transition-colors"
+                    data-tab="sunglasses">Sunglasses</button>
+                <button class="tab-btn text-gray-800 hover:text-black font-medium relative transition-colors"
+                    data-tab="eyeglasses">Eyeglasses</button>
+                <button class="tab-btn text-gray-800 hover:text-black font-medium relative transition-colors"
+                    data-tab="newarrivals">New Arrivals</button>
+            </nav>
+
+            <!-- Right Icons -->
+            <div class="flex items-center space-x-2 sm:space-x-4">
+                <!-- Search Icon -->
+                <button id="searchButton" class="p-2 hover:text-gray-700 transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M21 21l-4.35-4.35M17 10.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" />
+                    </svg>
+                </button>
+
+                <!-- Mobile menu button -->
+                <button id="menu-btn" class="md:hidden p-2 hover:bg-gray-100 rounded transition-colors">
+                    <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                    <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 hidden" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Search Bar (Hidden by default) -->
+        <div id="searchBar" class="hidden border-t border-gray-200 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
+                <div class="flex items-center space-x-2">
+                    <input type="text" placeholder="Search for sunglasses, eyeglasses..."
+                        class="flex-1 p-2 sm:p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black">
+                    <button
+                        class="px-4 sm:px-6 py-2 sm:py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors">Search</button>
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-3">
-                    <div class="header__<a href="URL_DESTINATION" class="block">
-    <div class="flex flex-col leading-none">
-        <span class="text-lg tracking-widest font-light">v o g u e</span>
-        <span class="text-xs tracking-[0.2em] text-gray-500">eyewear</span>
-    </div>
-</a>
-">
-                        <a href="./index.html"><img src="img/<a href="URL_DESTINATION" class="block">
-    <div class="flex flex-col leading-none">
-        <span class="text-lg tracking-widest font-light">v o g u e</span>
-        <span class="text-xs tracking-[0.2em] text-gray-500">eyewear</span>
-    </div>
-</a>
-.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <nav class="header__menu mobile-menu">
-                        <ul>
-                            <li><a href="./index.html">Home</a></li>
-                            <li><a href="./shop.html">Shop</a></li>
-                            <li><a href="#">Pages</a>
-                                <ul class="dropdown">
-                                    <li><a href="./about.html">About Us</a></li>
-                                    <li><a href="./shop-details.html">Shop Details</a></li>
-                                    <li><a href="./shopping-cart.html">Shopping Cart</a></li>
-                                    <li><a href="./checkout.html">Check Out</a></li>
-                                    <li><a href="./blog-details.html">Blog Details</a></li>
-                                </ul>
-                            </li>
-                            <li class="active"><a href="./blog.html">Blog</a></li>
-                            <li><a href="./contact.html">Contacts</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="col-lg-3 col-md-3">
-                    <div class="header__nav__option">
-                        <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
-                        <a href="#"><img src="img/icon/heart.png" alt=""></a>
-                        <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
-                        <div class="price">$0.00</div>
-                    </div>
-                </div>
+
+        <!-- Dropdown Section (Desktop) -->
+        <div id="submenu" class="hidden border-t border-gray-200 bg-white">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 py-6 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 text-center">
             </div>
-            <div class="canvas__open"><i class="fa fa-bars"></i></div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-white">
+            <nav class="flex flex-col py-2">
+                <button class="mobile-tab-btn text-left px-6 py-3 hover:bg-gray-50 transition-colors"
+                    data-tab="sunglasses">
+                    <span class="font-medium">Sunglasses</span>
+                </button>
+                <div id="mobile-submenu-sunglasses" class="hidden bg-gray-50 px-6 py-3">
+                    <div class="grid grid-cols-2 gap-3"></div>
+                </div>
+
+                <button class="mobile-tab-btn text-left px-6 py-3 hover:bg-gray-50 transition-colors"
+                    data-tab="eyeglasses">
+                    <span class="font-medium">Eyeglasses</span>
+                </button>
+                <div id="mobile-submenu-eyeglasses" class="hidden bg-gray-50 px-6 py-3">
+                    <div class="grid grid-cols-2 gap-3"></div>
+                </div>
+
+                <button class="mobile-tab-btn text-left px-6 py-3 hover:bg-gray-50 transition-colors"
+                    data-tab="newarrivals">
+                    <span class="font-medium">New Arrivals</span>
+                </button>
+                <div id="mobile-submenu-newarrivals" class="hidden bg-gray-50 px-6 py-3">
+                    <div class="grid grid-cols-2 gap-3"></div>
+                </div>
+            </nav>
         </div>
     </header>
     <!-- Header Section End -->
@@ -274,26 +294,12 @@
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer__about">
-                        <div class="footer__<a href="URL_DESTINATION" class="block">
-    <div class="flex flex-col leading-none">
-        <span class="text-lg tracking-widest font-light">v o g u e</span>
-        <span class="text-xs tracking-[0.2em] text-gray-500">eyewear</span>
-    </div>
-</a>
-">
-                            <a href="#"><img src="img/footer-<a href="URL_DESTINATION" class="block">
-    <div class="flex flex-col leading-none">
-        <span class="text-lg tracking-widest font-light">v o g u e</span>
-        <span class="text-xs tracking-[0.2em] text-gray-500">eyewear</span>
-    </div>
-</a>
-.png" alt=""></a>
-                        </div>
-                        <p>The customer is at the heart of our unique business model, which includes design.</p>
-                        <a href="#"><img src="img/payment.png" alt=""></a>
-                    </div>
+                <div class="flex flex-col">
+                    <span
+                        class="text-base sm:text-lg font-medium text-white group-hover:text-gray-700 transition-colors">Z
+                        O P T I C S</span>
+                    <span
+                        class="text-xs tracking-[0.2em] text-white group-hover:text-gray-700 transition-colors">eyewear</span>
                 </div>
                 <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
                     <div class="footer__widget">
