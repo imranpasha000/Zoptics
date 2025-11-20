@@ -79,6 +79,44 @@
         $(this).prev().removeClass('active');
     });
 
+    /*------------------
+        Sidebar Accordion Toggle
+    --------------------*/
+    // Use event delegation for better reliability
+    $(document).on('click', '.shop__sidebar__accordion .card-heading a', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        var target = $(this).attr('data-target');
+        var $target = $(target);
+        var $accordion = $(this).closest('.accordion');
+        var isCurrentlyOpen = $target.hasClass('show');
+        
+        console.log('Accordion clicked:', target, 'Currently open:', isCurrentlyOpen);
+        
+        // Always close all sections first
+        $accordion.find('.collapse').removeClass('show');
+        $accordion.find('.card-heading a').removeClass('active');
+        
+        // If it wasn't open before, open it now
+        if (!isCurrentlyOpen) {
+            $target.addClass('show');
+            $(this).addClass('active');
+            console.log('Opening section:', target);
+        } else {
+            console.log('Closing section:', target);
+        }
+        // If it was open, it stays closed (already removed 'show' class above)
+    });
+    
+    // Also handle direct clicks on the card-heading div
+    $(document).on('click', '.shop__sidebar__accordion .card-heading', function(e) {
+        if (e.target.tagName !== 'A') {
+            e.stopPropagation();
+            $(this).find('a').trigger('click');
+        }
+    });
+
     //Canvas Menu
     $(".canvas__open").on('click', function () {
         $(".offcanvas-menu-wrapper").addClass("active");
@@ -241,22 +279,22 @@
         
         const tabData = {
             sunglasses: [
-                { img: 'https://randomuser.me/api/portraits/women/1.jpg', name: 'Women' },
-                { img: 'https://randomuser.me/api/portraits/men/2.jpg', name: 'Men' },
-                { img: 'https://randomuser.me/api/portraits/women/3.jpg', name: 'Kids' },
-                { img: 'https://randomuser.me/api/portraits/men/4.jpg', name: 'Best Sellers' },
+                { img: 'https://randomuser.me/api/portraits/women/1.jpg', name: 'Women', url: 'sunglasses-women.html' },
+                { img: 'https://randomuser.me/api/portraits/men/2.jpg', name: 'Men', url: 'sunglasses-men.html' },
+                { img: 'https://randomuser.me/api/portraits/women/3.jpg', name: 'Kids', url: 'sunglasses-kids.html' },
+                { img: 'https://randomuser.me/api/portraits/men/4.jpg', name: 'Best Sellers', url: 'shop.html' },
             ],
             eyeglasses: [
-                { img: 'https://randomuser.me/api/portraits/women/5.jpg', name: 'Classic' },
-                { img: 'https://randomuser.me/api/portraits/men/6.jpg', name: 'Trendy' },
-                { img: 'https://randomuser.me/api/portraits/women/7.jpg', name: 'Retro' },
-                { img: 'https://randomuser.me/api/portraits/men/8.jpg', name: 'Luxury' },
+                { img: 'https://randomuser.me/api/portraits/women/5.jpg', name: 'Women', url: 'eyeglasses-women.html' },
+                { img: 'https://randomuser.me/api/portraits/men/6.jpg', name: 'Men', url: 'eyeglasses-men.html' },
+                { img: 'https://randomuser.me/api/portraits/women/7.jpg', name: 'Kids', url: 'eyeglasses-kids.html' },
+                { img: 'https://randomuser.me/api/portraits/men/8.jpg', name: 'All Eyeglasses', url: 'shop.html' },
             ],
             newarrivals: [
-                { img: 'https://randomuser.me/api/portraits/women/9.jpg', name: 'New Women' },
-                { img: 'https://randomuser.me/api/portraits/men/10.jpg', name: 'New Men' },
-                { img: 'https://randomuser.me/api/portraits/women/11.jpg', name: 'New Kids' },
-                { img: 'https://randomuser.me/api/portraits/men/12.jpg', name: 'Limited Edition' },
+                { img: 'https://randomuser.me/api/portraits/women/9.jpg', name: 'New Women', url: 'sunglasses-women.html' },
+                { img: 'https://randomuser.me/api/portraits/men/10.jpg', name: 'New Men', url: 'sunglasses-men.html' },
+                { img: 'https://randomuser.me/api/portraits/women/11.jpg', name: 'New Kids', url: 'sunglasses-kids.html' },
+                { img: 'https://randomuser.me/api/portraits/men/12.jpg', name: 'All Products', url: 'shop.html' },
             ]
         };
         
@@ -276,10 +314,10 @@
                     
                     submenuGrid.innerHTML = tabData[tab]
                         .map(item => `
-                            <div class="flex flex-col items-center space-y-2 cursor-pointer hover:opacity-75 transition-opacity">
+                            <a href="${item.url}" class="flex flex-col items-center space-y-2 cursor-pointer hover:opacity-75 transition-opacity">
                                 <img src="${item.img}" class="w-16 h-16 sm:w-20 sm:h-20 rounded-full object-cover" alt="${item.name}">
                                 <p class="text-sm text-gray-700">${item.name}</p>
-                            </div>
+                            </a>
                         `).join('');
                     
                     submenu.classList.remove('hidden');
@@ -303,10 +341,10 @@
                     const grid = mobileSubmenu.querySelector('div');
                     grid.innerHTML = tabData[tab]
                         .map(item => `
-                            <div class="flex flex-col items-center space-y-2 cursor-pointer hover:opacity-75 transition-opacity">
+                            <a href="${item.url}" class="flex flex-col items-center space-y-2 cursor-pointer hover:opacity-75 transition-opacity">
                                 <img src="${item.img}" class="w-16 h-16 rounded-full object-cover" alt="${item.name}">
                                 <p class="text-xs text-gray-700">${item.name}</p>
-                            </div>
+                            </a>
                         `).join('');
                     
                     mobileSubmenu.classList.remove('hidden');
@@ -335,6 +373,41 @@
         // Search toggle
         searchButton.addEventListener('click', () => {
             searchBar.classList.toggle('hidden');
+        });
+
+        // Backup: Plain JavaScript Accordion Handler
+        // This ensures accordion works even if jQuery has issues
+        const accordionLinks = document.querySelectorAll('.shop__sidebar__accordion .card-heading a');
+        accordionLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const targetId = this.getAttribute('data-target');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    const isCurrentlyOpen = targetElement.classList.contains('show');
+                    
+                    // Always close all sections first
+                    const accordion = this.closest('.accordion');
+                    if (accordion) {
+                        accordion.querySelectorAll('.collapse').forEach(collapse => {
+                            collapse.classList.remove('show');
+                        });
+                        accordion.querySelectorAll('.card-heading a').forEach(link => {
+                            link.classList.remove('active');
+                        });
+                    }
+                    
+                    // If it wasn't open before, open it now
+                    if (!isCurrentlyOpen) {
+                        targetElement.classList.add('show');
+                        this.classList.add('active');
+                    }
+                    // If it was open, it stays closed (already removed 'show' class above)
+                }
+            });
         });
         
         // Close menus when clicking outside
