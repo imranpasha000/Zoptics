@@ -50,9 +50,11 @@
         </div>
         <div class="offcanvas__nav__option">
             <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
-            <a href="#"><img src="img/icon/heart.png" alt=""></a>
-            <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
-            <div class="price">$0.00</div>
+            <a href="wishlist.html"><img src="img/icon/heart.png" alt=""> <span id="wishlist-count-offcanvas"
+                    class="wishlist-count" style="display: none;">0</span></a>
+            <a href="shopping-cart.html"><img src="img/icon/cart.png" alt=""> <span id="cart-count-offcanvas"
+                    class="cart-count" style="display: none;">0</span></a>
+            <div class="price cart-total">$0.00</div>
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__text">
@@ -62,43 +64,80 @@
     <!-- Offcanvas Menu End -->
 
     <!-- Header Section start -->
-    <header class="border-b border-gray-200 bg-white sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
+    <header class="bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-4">
 
             <!-- Logo -->
-            <a href="/" class="block flex-shrink-0 group">
+            <a href="index.html" class="block flex-shrink-0 group">
                 <div class="flex flex-col transition-all duration-300">
                     <span
-                        class="text-base sm:text-lg font-medium text-black group-hover:text-gray-700 transition-colors">Z
-                        O P T I C S</span>
+                        class="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-gray-700 transition-colors tracking-tight">ZOPTICS</span>
                     <span
-                        class="text-xs tracking-[0.2em] text-gray-500 group-hover:text-gray-700 transition-colors">eyewear</span>
+                        class="text-[10px] sm:text-xs tracking-[0.3em] text-gray-500 group-hover:text-gray-700 transition-colors uppercase">eyewear</span>
                 </div>
             </a>
 
             <!-- Navbar (Desktop) -->
-            <nav class="hidden md:flex items-center space-x-6 lg:space-x-10">
-                <button class="tab-btn text-gray-800 hover:text-black font-medium relative transition-colors"
+            <nav class="hidden md:flex items-center space-x-8 lg:space-x-12">
+                <button
+                    class="tab-btn text-sm font-semibold text-gray-700 hover:text-gray-900 relative transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 after:transition-all hover:after:w-full"
                     data-tab="sunglasses">Sunglasses</button>
-                <button class="tab-btn text-gray-800 hover:text-black font-medium relative transition-colors"
+                <button
+                    class="tab-btn text-sm font-semibold text-gray-700 hover:text-gray-900 relative transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 after:transition-all hover:after:w-full"
                     data-tab="eyeglasses">Eyeglasses</button>
-                <button class="tab-btn text-gray-800 hover:text-black font-medium relative transition-colors"
+                <button
+                    class="tab-btn text-sm font-semibold text-gray-700 hover:text-gray-900 relative transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 after:transition-all hover:after:w-full"
                     data-tab="newarrivals">New Arrivals</button>
             </nav>
 
             <!-- Right Icons -->
-            <div class="flex items-center space-x-2 sm:space-x-4">
+            <div class="flex items-center space-x-3 sm:space-x-4">
+                <!-- Login/Signup Button -->
+                <button id="toggleFormBtn"
+                    class="hidden md:block px-5 py-2 text-xs font-semibold text-gray-700 hover:text-gray-900 border border-gray-300 rounded-full hover:border-gray-900 transition-all duration-300 hover:shadow-sm">
+                    LOG IN / SIGNUP
+                </button>
+
+                <!-- Wishlist Icon -->
+                <a href="wishlist.html"
+                    class="relative p-2.5 hover:bg-gray-50 rounded-full transition-all duration-300 group">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="w-5 h-5 text-gray-700 group-hover:text-red-500 transition-colors" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                    <span id="wishlist-count"
+                        class="cart-badge absolute -top-0.5 -right-0.5 bg-red-500 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center shadow-sm"
+                        style="display: none;">0</span>
+                </a>
+
+                <!-- Cart Icon -->
+                <a href="shopping-cart.html"
+                    class="relative p-2.5 hover:bg-gray-50 rounded-full transition-all duration-300 group">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="w-5 h-5 text-gray-700 group-hover:text-gray-900 transition-colors" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <span id="cart-count"
+                        class="cart-badge absolute -top-0.5 -right-0.5 bg-gray-900 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center shadow-sm"
+                        style="display: none;">0</span>
+                </a>
+
                 <!-- Search Icon -->
-                <button id="searchButton" class="p-2 hover:text-gray-700 transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
+                <button id="searchButton" class="p-2.5 hover:bg-gray-50 rounded-full transition-all duration-300 group">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="w-5 h-5 text-gray-700 group-hover:text-gray-900 transition-colors" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                             d="M21 21l-4.35-4.35M17 10.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" />
                     </svg>
                 </button>
 
                 <!-- Mobile menu button -->
-                <button id="menu-btn" class="md:hidden p-2 hover:bg-gray-100 rounded transition-colors">
+                <button id="menu-btn" class="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors">
                     <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
@@ -114,93 +153,126 @@
         </div>
 
         <!-- Search Bar (Hidden by default) -->
-        <div id="searchBar" class="hidden border-t border-gray-200 bg-gray-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
-                <div class="flex items-center space-x-2">
+        <div id="searchBar" class="hidden border-t border-gray-100 bg-white/95 backdrop-blur-md">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                <div class="flex items-center space-x-3">
                     <input type="text" placeholder="Search for sunglasses, eyeglasses..."
-                        class="flex-1 p-2 sm:p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black">
+                        class="flex-1 px-4 py-3 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all">
                     <button
-                        class="px-4 sm:px-6 py-2 sm:py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors">Search</button>
+                        class="px-6 py-3 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-all duration-300 font-medium text-sm shadow-sm hover:shadow-md">Search</button>
                 </div>
             </div>
         </div>
 
         <!-- Dropdown Section (Desktop) -->
-        <div id="submenu" class="hidden border-t border-gray-200 bg-white">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 py-6 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 text-center">
+        <div id="submenu" class="hidden border-t border-gray-100 bg-white/95 backdrop-blur-md shadow-lg">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
             </div>
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-white">
-            <nav class="flex flex-col py-2">
-                <button class="mobile-tab-btn text-left px-6 py-3 hover:bg-gray-50 transition-colors"
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white">
+            <nav class="flex flex-col">
+                <button
+                    class="mobile-tab-btn text-left px-6 py-4 hover:bg-gray-50 transition-colors border-b border-gray-100"
                     data-tab="sunglasses">
-                    <span class="font-medium">Sunglasses</span>
+                    <span class="font-semibold text-gray-900">Sunglasses</span>
                 </button>
-                <div id="mobile-submenu-sunglasses" class="hidden bg-gray-50 px-6 py-3">
+                <div id="mobile-submenu-sunglasses" class="hidden bg-gray-50 px-6 py-4">
                     <div class="grid grid-cols-2 gap-3"></div>
                 </div>
 
-                <button class="mobile-tab-btn text-left px-6 py-3 hover:bg-gray-50 transition-colors"
+                <button
+                    class="mobile-tab-btn text-left px-6 py-4 hover:bg-gray-50 transition-colors border-b border-gray-100"
                     data-tab="eyeglasses">
-                    <span class="font-medium">Eyeglasses</span>
+                    <span class="font-semibold text-gray-900">Eyeglasses</span>
                 </button>
-                <div id="mobile-submenu-eyeglasses" class="hidden bg-gray-50 px-6 py-3">
+                <div id="mobile-submenu-eyeglasses" class="hidden bg-gray-50 px-6 py-4">
                     <div class="grid grid-cols-2 gap-3"></div>
                 </div>
 
-                <button class="mobile-tab-btn text-left px-6 py-3 hover:bg-gray-50 transition-colors"
+                <button
+                    class="mobile-tab-btn text-left px-6 py-4 hover:bg-gray-50 transition-colors border-b border-gray-100"
                     data-tab="newarrivals">
-                    <span class="font-medium">New Arrivals</span>
+                    <span class="font-semibold text-gray-900">New Arrivals</span>
                 </button>
-                <div id="mobile-submenu-newarrivals" class="hidden bg-gray-50 px-6 py-3">
+                <div id="mobile-submenu-newarrivals" class="hidden bg-gray-50 px-6 py-4">
                     <div class="grid grid-cols-2 gap-3"></div>
                 </div>
+
+                <!-- Mobile Login Button -->
+                <button id="toggleFormBtnMobile"
+                    class="text-left px-6 py-4 hover:bg-gray-50 transition-colors border-t border-gray-200 bg-gray-50">
+                    <span class="font-semibold text-sm text-gray-900">LOG IN / SIGNUP</span>
+                </button>
             </nav>
         </div>
     </header>
     <!-- Header Section End -->
     <!-- Hero Section Begin -->
-    <section class="hero">
-        <div class="hero__slider owl-carousel">
-            <div class="hero__items set-bg" data-setbg="img/hero/hero-1.jpg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-5 col-lg-7 col-md-8">
-                            <div class="hero__text">
-                                <h6>Summer Collection</h6>
-                                <h2>Fall - Winter Collections 2030</h2>
-                                <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
-                                    commitment to exceptional quality.</p>
-                                <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
-                                <div class="hero__social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                </div>
+    <section class="relative h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
+        <div class="hero__slider owl-carousel h-full">
+            <div class="hero__items h-full relative"
+                style="background-image: url('img/hero/hero-1.jpg'); background-size: cover; background-position: center;">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>
+                <div class="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
+                    <div class="max-w-2xl">
+                        <div class="hero__text space-y-6 animate-fadeInUp">
+                            <h6 class="text-sm font-bold text-white/90 uppercase tracking-widest">Summer Collection</h6>
+                            <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">Fall -
+                                Winter Collections 2030</h2>
+                            <p class="text-lg md:text-xl text-white/90 leading-relaxed max-w-xl">A specialist label
+                                creating luxury essentials. Ethically crafted with an unwavering commitment to
+                                exceptional quality.</p>
+                            <a href="shop.html"
+                                class="inline-flex items-center gap-2 px-8 py-4 bg-white text-gray-900 font-semibold rounded-full hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                                Shop now <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                            <div class="flex items-center gap-6 pt-8">
+                                <a href="#" class="text-white/80 hover:text-white transition-colors"><i
+                                        class="fa fa-facebook text-xl"></i></a>
+                                <a href="#" class="text-white/80 hover:text-white transition-colors"><i
+                                        class="fa fa-twitter text-xl"></i></a>
+                                <a href="#" class="text-white/80 hover:text-white transition-colors"><i
+                                        class="fa fa-pinterest text-xl"></i></a>
+                                <a href="#" class="text-white/80 hover:text-white transition-colors"><i
+                                        class="fa fa-instagram text-xl"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="hero__items set-bg" data-setbg="img/hero/hero-2.jpg">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-xl-5 col-lg-7 col-md-8">
-                            <div class="hero__text">
-                                <h6>Summer Collection</h6>
-                                <h2>Fall - Winter Collections 2030</h2>
-                                <p>A specialist label creating luxury essentials. Ethically crafted with an unwavering
-                                    commitment to exceptional quality.</p>
-                                <a href="#" class="primary-btn">Shop now <span class="arrow_right"></span></a>
-                                <div class="hero__social">
-                                    <a href="#"><i class="fa fa-facebook"></i></a>
-                                    <a href="#"><i class="fa fa-twitter"></i></a>
-                                    <a href="#"><i class="fa fa-pinterest"></i></a>
-                                    <a href="#"><i class="fa fa-instagram"></i></a>
-                                </div>
+            <div class="hero__items h-full relative"
+                style="background-image: url('img/hero/hero-2.jpg'); background-size: cover; background-position: center;">
+                <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/40 to-transparent"></div>
+                <div class="relative h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
+                    <div class="max-w-2xl">
+                        <div class="hero__text space-y-6 animate-fadeInUp">
+                            <h6 class="text-sm font-bold text-white/90 uppercase tracking-widest">Summer Collection</h6>
+                            <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">Fall -
+                                Winter Collections 2030</h2>
+                            <p class="text-lg md:text-xl text-white/90 leading-relaxed max-w-xl">A specialist label
+                                creating luxury essentials. Ethically crafted with an unwavering commitment to
+                                exceptional quality.</p>
+                            <a href="shop.html"
+                                class="inline-flex items-center gap-2 px-8 py-4 bg-white text-gray-900 font-semibold rounded-full hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                                Shop now <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                            <div class="flex items-center gap-6 pt-8">
+                                <a href="#" class="text-white/80 hover:text-white transition-colors"><i
+                                        class="fa fa-facebook text-xl"></i></a>
+                                <a href="#" class="text-white/80 hover:text-white transition-colors"><i
+                                        class="fa fa-twitter text-xl"></i></a>
+                                <a href="#" class="text-white/80 hover:text-white transition-colors"><i
+                                        class="fa fa-pinterest text-xl"></i></a>
+                                <a href="#" class="text-white/80 hover:text-white transition-colors"><i
+                                        class="fa fa-instagram text-xl"></i></a>
                             </div>
                         </div>
                     </div>
@@ -211,39 +283,65 @@
     <!-- Hero Section End -->
 
     <!-- Banner Section Begin -->
-    <section class="banner spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-7 offset-lg-4">
-                    <div class="banner__item">
-                        <div class="banner__item__pic">
-                            <img src="img/banner/banner-1.jpg" alt="">
-                        </div>
-                        <div class="banner__item__text">
-                            <h2>Clothing Collections 2030</h2>
-                            <a href="#">Shop now</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="banner__item banner__item--middle">
-                        <div class="banner__item__pic">
-                            <img src="img/banner/banner-2.jpg" alt="">
-                        </div>
-                        <div class="banner__item__text">
-                            <h2>Accessories</h2>
-                            <a href="#">Shop now</a>
+    <section class="py-12 md:py-16 lg:py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                <!-- Large Banner -->
+                <div
+                    class="md:col-span-2 lg:col-span-1 lg:row-span-2 group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500">
+                    <div class="relative h-[400px] lg:h-full">
+                        <img src="img/banner/banner-1.jpg" alt="Clothing Collections"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-8 lg:p-12">
+                            <h2 class="text-3xl lg:text-4xl font-bold text-white mb-4">Clothing Collections 2030</h2>
+                            <a href="shop.html"
+                                class="inline-flex items-center gap-2 text-white font-semibold hover:gap-3 transition-all duration-300 border-b-2 border-white pb-1">
+                                Shop now <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-7">
-                    <div class="banner__item banner__item--last">
-                        <div class="banner__item__pic">
-                            <img src="img/banner/banner-3.jpg" alt="">
+
+                <!-- Medium Banner 1 -->
+                <div
+                    class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500">
+                    <div class="relative h-[300px] lg:h-[350px]">
+                        <img src="img/banner/banner-2.jpg" alt="Accessories"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
+                            <h2 class="text-2xl lg:text-3xl font-bold text-white mb-3">Accessories</h2>
+                            <a href="shop.html"
+                                class="inline-flex items-center gap-2 text-white font-semibold hover:gap-3 transition-all duration-300 border-b-2 border-white pb-1">
+                                Shop now <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
                         </div>
-                        <div class="banner__item__text">
-                            <h2>Shoes Spring 2030</h2>
-                            <a href="#">Shop now</a>
+                    </div>
+                </div>
+
+                <!-- Medium Banner 2 -->
+                <div
+                    class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500">
+                    <div class="relative h-[300px] lg:h-[350px]">
+                        <img src="img/banner/banner-3.jpg" alt="Shoes Spring"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 lg:p-8">
+                            <h2 class="text-2xl lg:text-3xl font-bold text-white mb-3">Shoes Spring 2030</h2>
+                            <a href="shop.html"
+                                class="inline-flex items-center gap-2 text-white font-semibold hover:gap-3 transition-all duration-300 border-b-2 border-white pb-1">
+                                Shop now <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -252,85 +350,297 @@
     </section>
     <!-- Banner Section End -->
 
-    <!-- Product Section Begin -->
-    <section class="product spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="filter__controls">
-                        <li class="active" data-filter="*">Best Sellers</li>
-                        <li data-filter=".new-arrivals">New Arrivals</li>
-                        <li data-filter=".hot-sales">Hot Sales</li>
-                    </ul>
+    <!-- Shop by Categories Section Begin -->
+    <section class="py-12 md:py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 md:mb-12">Shop by Categories</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+                <a href="#" class="group relative overflow-hidden rounded-lg">
+                    <img src="img/banner/banner-1.jpg" alt="Women"
+                        class="w-full h-[350px] md:h-[420px] object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute bottom-8 left-0 right-0 text-center">
+                        <div class="flex flex-col items-center">
+                            <span
+                                class="text-2xl md:text-3xl font-semibold text-white tracking-wide lowercase drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">women</span>
+                            <span
+                                class="mt-2 w-10 h-0.5 bg-white rounded-full transition-all duration-300 group-hover:w-16"></span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="group relative overflow-hidden rounded-lg">
+                    <img src="img/banner/banner-2.jpg" alt="Men"
+                        class="w-full h-[350px] md:h-[420px] object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute bottom-8 left-0 right-0 text-center">
+                        <div class="flex flex-col items-center">
+                            <span
+                                class="text-2xl md:text-3xl font-semibold text-white tracking-wide lowercase drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">men</span>
+                            <span
+                                class="mt-2 w-10 h-0.5 bg-white rounded-full transition-all duration-300 group-hover:w-16"></span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="group relative overflow-hidden rounded-lg">
+                    <img src="img/banner/banner-3.jpg" alt="Teens"
+                        class="w-full h-[350px] md:h-[420px] object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute bottom-8 left-0 right-0 text-center">
+                        <div class="flex flex-col items-center">
+                            <span
+                                class="text-2xl md:text-3xl font-semibold text-white tracking-wide lowercase drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">teens</span>
+                            <span
+                                class="mt-2 w-10 h-0.5 bg-white rounded-full transition-all duration-300 group-hover:w-16"></span>
+                        </div>
+                    </div>
+                </a>
+                <a href="#" class="group relative overflow-hidden rounded-lg">
+                    <img src="img/product/product-1.jpg" alt="Kids"
+                        class="w-full h-[350px] md:h-[420px] object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute bottom-8 left-0 right-0 text-center">
+                        <div class="flex flex-col items-center">
+                            <span
+                                class="text-2xl md:text-3xl font-semibold text-white tracking-wide lowercase drop-shadow-[0_2px_8px_rgba(0,0,0,0.8)]">kids</span>
+                            <span
+                                class="mt-2 w-10 h-0.5 bg-white rounded-full transition-all duration-300 group-hover:w-16"></span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Shop by Categories Section End -->
+
+    <!-- Trending Section Begin -->
+    <section class="py-12 md:py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="flex flex-col lg:flex-row items-start lg:items-center gap-8 lg:gap-12">
+                <!-- Left Fixed Text -->
+                <div class="w-full lg:w-[30%] lg:pl-10">
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-4">Trending</h1>
+                    <p class="text-lg text-gray-600">Shop newly arrived & trending fashion items</p>
+                </div>
+
+                <!-- Right Slider -->
+                <div class="w-full lg:w-[70%] relative">
+                    <input type="radio" name="trend-slider" id="trend-slide-1" class="hidden" checked>
+                    <input type="radio" name="trend-slider" id="trend-slide-2" class="hidden">
+
+                    <div class="overflow-hidden rounded-lg">
+                        <div id="trend-slides" class="flex transition-transform duration-700 ease-in-out"
+                            style="width: 200%; transform: translateX(0%);">
+                            <!-- Slide 1 -->
+                            <div
+                                class="w-1/2 flex justify-between gap-2 sm:gap-4 md:gap-6 px-2 sm:px-4 md:px-10 flex-shrink-0">
+                                <div class="text-center flex-1 hidden sm:block">
+                                    <img src="img/product/product-1.jpg" alt="Item 1"
+                                        class="w-full max-w-[150px] mx-auto h-auto rounded-lg shadow-md">
+                                    <h3 class="mt-3 text-lg md:text-xl font-medium">Item 1</h3>
+                                </div>
+                                <div class="text-center flex-1">
+                                    <img src="img/product/product-2.jpg" alt="Item 2"
+                                        class="w-full max-w-[150px] mx-auto h-auto rounded-lg shadow-md">
+                                    <h3 class="mt-3 text-base sm:text-lg md:text-xl font-medium">Item 2</h3>
+                                </div>
+                                <div class="text-center flex-1">
+                                    <img src="img/product/product-3.jpg" alt="Item 3"
+                                        class="w-full max-w-[150px] mx-auto h-auto rounded-lg shadow-md">
+                                    <h3 class="mt-3 text-base sm:text-lg md:text-xl font-medium">Item 3</h3>
+                                </div>
+                                <div class="text-center flex-1 hidden md:block">
+                                    <img src="img/product/product-4.jpg" alt="Item 4"
+                                        class="w-full max-w-[150px] mx-auto h-auto rounded-lg shadow-md">
+                                    <h3 class="mt-3 text-lg md:text-xl font-medium">Item 4</h3>
+                                </div>
+                            </div>
+                            <!-- Slide 2 -->
+                            <div
+                                class="w-1/2 flex justify-between gap-2 sm:gap-4 md:gap-6 px-2 sm:px-4 md:px-10 flex-shrink-0">
+                                <div class="text-center flex-1 hidden sm:block">
+                                    <img src="img/product/product-5.jpg" alt="Item 5"
+                                        class="w-full max-w-[150px] mx-auto h-auto rounded-lg shadow-md">
+                                    <h3 class="mt-3 text-lg md:text-xl font-medium">Item 5</h3>
+                                </div>
+                                <div class="text-center flex-1">
+                                    <img src="img/product/product-6.jpg" alt="Item 6"
+                                        class="w-full max-w-[150px] mx-auto h-auto rounded-lg shadow-md">
+                                    <h3 class="mt-3 text-base sm:text-lg md:text-xl font-medium">Item 6</h3>
+                                </div>
+                                <div class="text-center flex-1">
+                                    <img src="img/product/product-7.jpg" alt="Item 7"
+                                        class="w-full max-w-[150px] mx-auto h-auto rounded-lg shadow-md">
+                                    <h3 class="mt-3 text-base sm:text-lg md:text-xl font-medium">Item 7</h3>
+                                </div>
+                                <div class="text-center flex-1 hidden md:block">
+                                    <img src="img/product/product-8.jpg" alt="Item 8"
+                                        class="w-full max-w-[150px] mx-auto h-auto rounded-lg shadow-md">
+                                    <h3 class="mt-3 text-lg md:text-xl font-medium">Item 8</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Arrows -->
+                    <label for="trend-slide-1"
+                        class="absolute left-0 top-1/2 -translate-y-1/2 text-5xl text-gray-400 hover:text-teal-600 cursor-pointer transition-colors z-10 px-2 bg-white/50 rounded-full backdrop-blur-sm">‹</label>
+                    <label for="trend-slide-2"
+                        class="absolute right-0 top-1/2 -translate-y-1/2 text-5xl text-gray-400 hover:text-teal-600 cursor-pointer transition-colors z-10 px-2 bg-white/50 rounded-full backdrop-blur-sm">›</label>
                 </div>
             </div>
-            <div class="row product__filter">
-                <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
-                    <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="img/product/product-1.jpg">
-                            <span class="label">New</span>
-                            <ul class="product__hover">
-                                <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
-                                <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                                <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
-                            </ul>
-                        </div>
-                        <div class="product__item__text">
-                            <h6>Piqué Biker Jacket</h6>
-                            <a href="#" class="add-cart">+ Add To Cart</a>
-                            <div class="rating">
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
+        </div>
+    </section>
+    <!-- Trending Section End -->
+
+    <!-- Just In Section Begin -->
+    <section class="py-12 md:py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
+                <!-- Left Product Grid -->
+                <div class="w-full lg:w-[70%] flex flex-col gap-10">
+                    <!-- Page 1 -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                        <div class="w-full">
+                            <div class="w-full h-64 bg-gray-200 rounded-lg mb-3"></div>
+                            <div class="font-sans">
+                                <p class="text-base text-amber-800 mb-1">Just in</p>
+                                <p class="text-xl font-medium mb-1">VO5656U</p>
+                                <p class="text-base text-gray-600">4 colors</p>
                             </div>
-                            <h5>$67.24</h5>
-                            <div class="product__color__select">
-                                <label for="pc-1">
-                                    <input type="radio" id="pc-1">
-                                </label>
-                                <label class="active black" for="pc-2">
-                                    <input type="radio" id="pc-2">
-                                </label>
-                                <label class="grey" for="pc-3">
-                                    <input type="radio" id="pc-3">
-                                </label>
+                        </div>
+                        <div class="w-full">
+                            <div class="w-full h-64 bg-gray-200 rounded-lg mb-3"></div>
+                            <div class="font-sans">
+                                <p class="text-base text-amber-800 mb-1">Just in</p>
+                                <p class="text-xl font-medium mb-1">VO5660U</p>
+                                <p class="text-base text-gray-600">5 colors</p>
+                            </div>
+                        </div>
+                        <div class="w-full">
+                            <div class="w-full h-64 bg-gray-200 rounded-lg mb-3"></div>
+                            <div class="font-sans">
+                                <p class="text-base text-amber-800 mb-1">Just in</p>
+                                <p class="text-xl font-medium mb-1">VO5667</p>
+                                <p class="text-base text-gray-600">5 colors</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Page 2 -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                        <div class="w-full">
+                            <div class="w-full h-64 bg-gray-200 rounded-lg mb-3"></div>
+                            <div class="font-sans">
+                                <p class="text-base text-amber-800 mb-1">Just in</p>
+                                <p class="text-xl font-medium mb-1">VO5668</p>
+                                <p class="text-base text-gray-600">5 colors</p>
+                            </div>
+                        </div>
+                        <div class="w-full">
+                            <div class="w-full h-64 bg-gray-200 rounded-lg mb-3"></div>
+                            <div class="font-sans">
+                                <p class="text-base text-amber-800 mb-1">Just in</p>
+                                <p class="text-xl font-medium mb-1">VO5670</p>
+                                <p class="text-base text-gray-600">5 colors</p>
+                            </div>
+                        </div>
+                        <div class="w-full">
+                            <div class="w-full h-64 bg-gray-200 rounded-lg mb-3"></div>
+                            <div class="font-sans">
+                                <p class="text-base text-amber-800 mb-1">Just in</p>
+                                <p class="text-xl font-medium mb-1">VO5671</p>
+                                <p class="text-base text-gray-600">5 colors</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix hot-sales">
-                    <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="img/product/product-2.jpg">
-                            <ul class="product__hover">
-                                <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
-                                <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
-                                <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
-                            </ul>
+
+                <!-- Right Model Image -->
+                <div class="w-full lg:w-[30%] min-h-[850px] rounded-lg bg-cover bg-center bg-gray-300"
+                    style="background-image: url('img/hero/hero-1.jpg');"></div>
+            </div>
+        </div>
+    </section>
+    <!-- Just In Section End -->
+
+    <!-- Product Section Begin -->
+    <section class="py-16 md:py-20 lg:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <ul class="flex items-center justify-center gap-4 md:gap-8 flex-wrap">
+                    <li class="filter-btn active px-6 py-3 text-sm font-semibold text-gray-900 bg-gray-100 rounded-full cursor-pointer transition-all duration-300 hover:bg-gray-200"
+                        data-filter="*">Best Sellers</li>
+                    <li class="filter-btn px-6 py-3 text-sm font-semibold text-gray-600 rounded-full cursor-pointer transition-all duration-300 hover:bg-gray-100"
+                        data-filter=".new-arrivals">New Arrivals</li>
+                    <li class="filter-btn px-6 py-3 text-sm font-semibold text-gray-600 rounded-full cursor-pointer transition-all duration-300 hover:bg-gray-100"
+                        data-filter=".hot-sales">Hot Sales</li>
+                </ul>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 product__filter">
+                <div class="mix new-arrivals group">
+                    <div class="product__item bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
+                        data-product-id="product-1" data-product-name="Piqué Biker Jacket" data-product-price="67.24"
+                        data-product-image="img/product/product-1.jpg">
+                        <div class="relative overflow-hidden">
+                            <img src="img/product/product-1.jpg" alt="Piqué Biker Jacket"
+                                class="w-full h-[300px] object-cover group-hover:scale-110 transition-transform duration-500">
+                            <span
+                                class="absolute top-4 left-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full">New</span>
+                            <div
+                                class="absolute top-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <a href="#"
+                                    class="wishlist-btn bg-white p-2.5 rounded-full shadow-md hover:bg-red-50 transition-colors"
+                                    data-wishlist-btn><i class="fa fa-heart-o text-gray-700"></i></a>
+                                <a href="#"
+                                    class="bg-white p-2.5 rounded-full shadow-md hover:bg-gray-50 transition-colors"><i
+                                        class="fa fa-search text-gray-700"></i></a>
+                            </div>
                         </div>
-                        <div class="product__item__text">
-                            <h6>Piqué Biker Jacket</h6>
-                            <a href="#" class="add-cart">+ Add To Cart</a>
-                            <div class="rating">
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
-                                <i class="fa fa-star-o"></i>
+                        <div class="p-5">
+                            <h6 class="text-lg font-semibold text-gray-900 mb-2">Piqué Biker Jacket</h6>
+                            <div class="flex items-center gap-1 mb-3">
+                                <i class="fa fa-star text-yellow-400 text-sm"></i>
+                                <i class="fa fa-star text-yellow-400 text-sm"></i>
+                                <i class="fa fa-star text-yellow-400 text-sm"></i>
+                                <i class="fa fa-star text-yellow-400 text-sm"></i>
+                                <i class="fa fa-star-o text-gray-300 text-sm"></i>
                             </div>
-                            <h5>$67.24</h5>
-                            <div class="product__color__select">
-                                <label for="pc-4">
-                                    <input type="radio" id="pc-4">
-                                </label>
-                                <label class="active black" for="pc-5">
-                                    <input type="radio" id="pc-5">
-                                </label>
-                                <label class="grey" for="pc-6">
-                                    <input type="radio" id="pc-6">
-                                </label>
+                            <div class="flex items-center justify-between mb-4">
+                                <h5 class="text-xl font-bold text-gray-900">$67.24</h5>
                             </div>
+                            <a href="#"
+                                class="add-cart block w-full text-center py-3 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-all duration-300">+
+                                Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mix hot-sales group">
+                    <div class="product__item bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300"
+                        data-product-id="product-2" data-product-name="Piqué Biker Jacket" data-product-price="67.24"
+                        data-product-image="img/product/product-2.jpg">
+                        <div class="relative overflow-hidden">
+                            <img src="img/product/product-2.jpg" alt="Piqué Biker Jacket"
+                                class="w-full h-[300px] object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div
+                                class="absolute top-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <a href="#"
+                                    class="wishlist-btn bg-white p-2.5 rounded-full shadow-md hover:bg-red-50 transition-colors"
+                                    data-wishlist-btn><i class="fa fa-heart-o text-gray-700"></i></a>
+                                <a href="#"
+                                    class="bg-white p-2.5 rounded-full shadow-md hover:bg-gray-50 transition-colors"><i
+                                        class="fa fa-search text-gray-700"></i></a>
+                            </div>
+                        </div>
+                        <div class="p-5">
+                            <h6 class="text-lg font-semibold text-gray-900 mb-2">Piqué Biker Jacket</h6>
+                            <div class="flex items-center gap-1 mb-3">
+                                <i class="fa fa-star-o text-gray-300 text-sm"></i>
+                                <i class="fa fa-star-o text-gray-300 text-sm"></i>
+                                <i class="fa fa-star-o text-gray-300 text-sm"></i>
+                                <i class="fa fa-star-o text-gray-300 text-sm"></i>
+                                <i class="fa fa-star-o text-gray-300 text-sm"></i>
+                            </div>
+                            <div class="flex items-center justify-between mb-4">
+                                <h5 class="text-xl font-bold text-gray-900">$67.24</h5>
+                            </div>
+                            <a href="#"
+                                class="add-cart block w-full text-center py-3 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-all duration-300">+
+                                Add To Cart</a>
                         </div>
                     </div>
                 </div>
@@ -339,7 +649,8 @@
                         <div class="product__item__pic set-bg" data-setbg="img/product/product-3.jpg">
                             <span class="label">Sale</span>
                             <ul class="product__hover">
-                                <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
+                                <li><a href="#" class="wishlist-btn" data-wishlist-btn><i class="fa fa-heart-o"></i></a>
+                                </li>
                                 <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
                                 <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
                             </ul>
@@ -373,7 +684,8 @@
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="img/product/product-4.jpg">
                             <ul class="product__hover">
-                                <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
+                                <li><a href="#" class="wishlist-btn" data-wishlist-btn><i class="fa fa-heart-o"></i></a>
+                                </li>
                                 <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
                                 <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
                             </ul>
@@ -407,7 +719,8 @@
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="img/product/product-5.jpg">
                             <ul class="product__hover">
-                                <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
+                                <li><a href="#" class="wishlist-btn" data-wishlist-btn><i class="fa fa-heart-o"></i></a>
+                                </li>
                                 <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
                                 <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
                             </ul>
@@ -442,7 +755,8 @@
                         <div class="product__item__pic set-bg" data-setbg="img/product/product-6.jpg">
                             <span class="label">Sale</span>
                             <ul class="product__hover">
-                                <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
+                                <li><a href="#" class="wishlist-btn" data-wishlist-btn><i class="fa fa-heart-o"></i></a>
+                                </li>
                                 <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
                                 <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
                             </ul>
@@ -476,7 +790,8 @@
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="img/product/product-7.jpg">
                             <ul class="product__hover">
-                                <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
+                                <li><a href="#" class="wishlist-btn" data-wishlist-btn><i class="fa fa-heart-o"></i></a>
+                                </li>
                                 <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
                                 <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
                             </ul>
@@ -510,7 +825,8 @@
                     <div class="product__item">
                         <div class="product__item__pic set-bg" data-setbg="img/product/product-8.jpg">
                             <ul class="product__hover">
-                                <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
+                                <li><a href="#" class="wishlist-btn" data-wishlist-btn><i class="fa fa-heart-o"></i></a>
+                                </li>
                                 <li><a href="#"><img src="img/icon/compare.png" alt=""> <span>Compare</span></a></li>
                                 <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
                             </ul>
@@ -546,46 +862,55 @@
     <!-- Product Section End -->
 
     <!-- Categories Section Begin -->
-    <section class="categories spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="categories__text">
-                        <h2>Clothings Hot <br /> <span>Shoe Collection</span> <br /> Accessories</h2>
-                    </div>
+    <section class="py-16 md:py-20 lg:py-24 bg-gradient-to-br from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+                <div class="lg:col-span-3">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
+                        Clothings Hot <br />
+                        <span class="text-gray-600">Shoe Collection</span> <br />
+                        Accessories
+                    </h2>
                 </div>
-                <div class="col-lg-4">
-                    <div class="categories__hot__deal">
-                        <img src="img/product-sale.png" alt="">
-                        <div class="hot__deal__sticker">
-                            <span>Sale Of</span>
-                            <h5>$29.99</h5>
+                <div class="lg:col-span-4 relative">
+                    <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="img/product-sale.png" alt="Sale" class="w-full h-auto">
+                        <div class="absolute top-6 right-6 bg-red-500 text-white px-6 py-4 rounded-xl shadow-lg">
+                            <span class="block text-sm font-semibold uppercase tracking-wide mb-1">Sale Of</span>
+                            <h5 class="text-3xl font-bold">$29.99</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 offset-lg-1">
-                    <div class="categories__deal__countdown">
-                        <span>Deal Of The Week</span>
-                        <h2>Multi-pocket Chest Bag Black</h2>
-                        <div class="categories__deal__countdown__timer" id="countdown">
-                            <div class="cd-item">
-                                <span>3</span>
-                                <p>Days</p>
+                <div class="lg:col-span-5">
+                    <div class="bg-white rounded-2xl p-8 shadow-xl">
+                        <span class="text-sm font-bold text-red-500 uppercase tracking-wider mb-2 block">Deal Of The
+                            Week</span>
+                        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Multi-pocket Chest Bag Black</h2>
+                        <div class="grid grid-cols-4 gap-4 mb-8" id="countdown">
+                            <div class="text-center bg-gray-50 rounded-xl p-4">
+                                <span class="block text-3xl font-bold text-gray-900">3</span>
+                                <p class="text-xs text-gray-600 uppercase mt-1">Days</p>
                             </div>
-                            <div class="cd-item">
-                                <span>1</span>
-                                <p>Hours</p>
+                            <div class="text-center bg-gray-50 rounded-xl p-4">
+                                <span class="block text-3xl font-bold text-gray-900">1</span>
+                                <p class="text-xs text-gray-600 uppercase mt-1">Hours</p>
                             </div>
-                            <div class="cd-item">
-                                <span>50</span>
-                                <p>Minutes</p>
+                            <div class="text-center bg-gray-50 rounded-xl p-4">
+                                <span class="block text-3xl font-bold text-gray-900">50</span>
+                                <p class="text-xs text-gray-600 uppercase mt-1">Minutes</p>
                             </div>
-                            <div class="cd-item">
-                                <span>18</span>
-                                <p>Seconds</p>
+                            <div class="text-center bg-gray-50 rounded-xl p-4">
+                                <span class="block text-3xl font-bold text-gray-900">18</span>
+                                <p class="text-xs text-gray-600 uppercase mt-1">Seconds</p>
                             </div>
                         </div>
-                        <a href="#" class="primary-btn">Shop now</a>
+                        <a href="shop.html"
+                            class="inline-flex items-center gap-2 px-8 py-4 bg-gray-900 text-white font-semibold rounded-full hover:bg-gray-800 transition-all duration-300 shadow-lg hover:shadow-xl">
+                            Shop now <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -594,25 +919,61 @@
     <!-- Categories Section End -->
 
     <!-- Instagram Section Begin -->
-    <section class="instagram spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="instagram__pic">
-                        <div class="instagram__pic__item set-bg" data-setbg="img/instagram/instagram-1.jpg"></div>
-                        <div class="instagram__pic__item set-bg" data-setbg="img/instagram/instagram-2.jpg"></div>
-                        <div class="instagram__pic__item set-bg" data-setbg="img/instagram/instagram-3.jpg"></div>
-                        <div class="instagram__pic__item set-bg" data-setbg="img/instagram/instagram-4.jpg"></div>
-                        <div class="instagram__pic__item set-bg" data-setbg="img/instagram/instagram-5.jpg"></div>
-                        <div class="instagram__pic__item set-bg" data-setbg="img/instagram/instagram-6.jpg"></div>
+    <section class="py-16 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-8">
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="relative overflow-hidden rounded-xl group cursor-pointer">
+                            <img src="img/instagram/instagram-1.jpg" alt="Instagram"
+                                class="w-full h-[250px] object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300">
+                            </div>
+                        </div>
+                        <div class="relative overflow-hidden rounded-xl group cursor-pointer">
+                            <img src="img/instagram/instagram-2.jpg" alt="Instagram"
+                                class="w-full h-[250px] object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300">
+                            </div>
+                        </div>
+                        <div class="relative overflow-hidden rounded-xl group cursor-pointer">
+                            <img src="img/instagram/instagram-3.jpg" alt="Instagram"
+                                class="w-full h-[250px] object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300">
+                            </div>
+                        </div>
+                        <div class="relative overflow-hidden rounded-xl group cursor-pointer">
+                            <img src="img/instagram/instagram-4.jpg" alt="Instagram"
+                                class="w-full h-[250px] object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300">
+                            </div>
+                        </div>
+                        <div class="relative overflow-hidden rounded-xl group cursor-pointer">
+                            <img src="img/instagram/instagram-5.jpg" alt="Instagram"
+                                class="w-full h-[250px] object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300">
+                            </div>
+                        </div>
+                        <div class="relative overflow-hidden rounded-xl group cursor-pointer">
+                            <img src="img/instagram/instagram-6.jpg" alt="Instagram"
+                                class="w-full h-[250px] object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div
+                                class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300">
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="instagram__text">
-                        <h2>Instagram</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua.</p>
-                        <h3>#Male_Fashion</h3>
+                <div class="lg:col-span-4 lg:pl-8">
+                    <div class="text-center lg:text-left">
+                        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Instagram</h2>
+                        <p class="text-gray-600 text-lg leading-relaxed mb-6">Follow us on Instagram for the latest
+                            trends, style inspiration, and exclusive offers.</p>
+                        <h3 class="text-2xl font-bold text-gray-900">#Zoptics</h3>
                     </div>
                 </div>
             </div>
@@ -621,45 +982,74 @@
     <!-- Instagram Section End -->
 
     <!-- Latest Blog Section Begin -->
-    <section class="latest spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="section-title">
-                        <span>Latest News</span>
-                        <h2>Fashion New Trends</h2>
-                    </div>
-                </div>
+    <section class="py-16 md:py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-sm font-bold text-red-500 uppercase tracking-wider mb-2 block">Latest News</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900">Fashion New Trends</h2>
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="blog__item">
-                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-1.jpg"></div>
-                        <div class="blog__item__text">
-                            <span><img src="img/icon/calendar.png" alt=""> 16 February 2020</span>
-                            <h5>What Curling Irons Are The Best Ones</h5>
-                            <a href="#">Read More</a>
-                        </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div
+                    class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+                    <div class="relative overflow-hidden">
+                        <img src="img/blog/blog-1.jpg" alt="Blog"
+                            class="w-full h-[250px] object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-sm text-gray-500 mb-3 block flex items-center gap-2">
+                            <i class="fa fa-calendar text-gray-400"></i> 16 February 2020
+                        </span>
+                        <h5 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-gray-700 transition-colors">
+                            What Curling Irons Are The Best Ones</h5>
+                        <a href="blog-details.html"
+                            class="text-gray-900 font-semibold hover:text-gray-700 transition-colors inline-flex items-center gap-2">
+                            Read More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="blog__item">
-                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-2.jpg"></div>
-                        <div class="blog__item__text">
-                            <span><img src="img/icon/calendar.png" alt=""> 21 February 2020</span>
-                            <h5>Eternity Bands Do Last Forever</h5>
-                            <a href="#">Read More</a>
-                        </div>
+                <div
+                    class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+                    <div class="relative overflow-hidden">
+                        <img src="img/blog/blog-2.jpg" alt="Blog"
+                            class="w-full h-[250px] object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-sm text-gray-500 mb-3 block flex items-center gap-2">
+                            <i class="fa fa-calendar text-gray-400"></i> 21 February 2020
+                        </span>
+                        <h5 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-gray-700 transition-colors">
+                            Eternity Bands Do Last Forever</h5>
+                        <a href="blog-details.html"
+                            class="text-gray-900 font-semibold hover:text-gray-700 transition-colors inline-flex items-center gap-2">
+                            Read More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-6">
-                    <div class="blog__item">
-                        <div class="blog__item__pic set-bg" data-setbg="img/blog/blog-3.jpg"></div>
-                        <div class="blog__item__text">
-                            <span><img src="img/icon/calendar.png" alt=""> 28 February 2020</span>
-                            <h5>The Health Benefits Of Sunglasses</h5>
-                            <a href="#">Read More</a>
-                        </div>
+                <div
+                    class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group">
+                    <div class="relative overflow-hidden">
+                        <img src="img/blog/blog-3.jpg" alt="Blog"
+                            class="w-full h-[250px] object-cover group-hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-sm text-gray-500 mb-3 block flex items-center gap-2">
+                            <i class="fa fa-calendar text-gray-400"></i> 28 February 2020
+                        </span>
+                        <h5 class="text-xl font-bold text-gray-900 mb-4 group-hover:text-gray-700 transition-colors">The
+                            Health Benefits Of Sunglasses</h5>
+                        <a href="blog-details.html"
+                            class="text-gray-900 font-semibold hover:text-gray-700 transition-colors inline-flex items-center gap-2">
+                            Read More <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -667,6 +1057,7 @@
     </section>
     <!-- Latest Blog Section End -->
 
+<<<<<<< HEAD
     <!-- Footer Section -->
     <footer class="bg-slate-100 py-12">
         <div class="max-w-7xl mx-auto px-4">
@@ -760,6 +1151,124 @@
                 <p class="text-center text-sm text-gray-600">
                     Copyright © <span id="year"></span> All rights reserved | Made with <span class="text-red-600">❤</span> by boAt
                 </p>
+=======
+    <!-- Footer Section Begin -->
+    <footer class="bg-gradient-to-b from-gray-900 to-black text-white py-16 md:py-20 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Main Footer Content -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-12 mb-12">
+                <!-- Useful Links Column -->
+                <div class="flex flex-col">
+                    <h3 class="text-white text-sm font-bold tracking-wider uppercase mb-6">Useful Links</h3>
+                    <ul class="flex flex-col gap-3">
+                        <li><a href="/terms-of-service"
+                                class="text-gray-400 text-sm hover:text-white transition-colors duration-300">Terms of
+                                Service</a></li>
+                        <li><a href="/refund-policy"
+                                class="text-gray-400 text-sm hover:text-white transition-colors duration-300">Refund
+                                policy</a></li>
+                        <li><a href="/shipping-policy"
+                                class="text-gray-400 text-sm hover:text-white transition-colors duration-300">Shipping
+                                policy</a></li>
+                        <li><a href="/privacy-policy"
+                                class="text-gray-400 text-sm hover:text-white transition-colors duration-300">Privacy
+                                policy</a></li>
+                        <li><a href="/cancellation-returns"
+                                class="text-gray-400 text-sm hover:text-white transition-colors duration-300">Cancellation
+                                & Returns</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links Column -->
+                <div class="flex flex-col">
+                    <h3 class="text-white text-sm font-bold tracking-wider uppercase mb-6">Quick Links</h3>
+                    <ul class="flex flex-col gap-3">
+                        <li><a href="/search"
+                                class="text-gray-400 text-sm hover:text-white transition-colors duration-300">Search</a>
+                        </li>
+                        <li><a href="/about-us"
+                                class="text-gray-400 text-sm hover:text-white transition-colors duration-300">About
+                                Us</a></li>
+                        <li><a href="/contact-us"
+                                class="text-gray-400 text-sm hover:text-white transition-colors duration-300">Contact
+                                Us</a></li>
+                        <li><a href="/sitemap"
+                                class="text-gray-400 text-sm hover:text-white transition-colors duration-300">Sitemap</a>
+                        </li>
+                        <li><a href="/my-account"
+                                class="text-gray-400 text-sm hover:text-white transition-colors duration-300">My
+                                Account</a></li>
+                    </ul>
+                </div>
+
+                <!-- Categories Column -->
+                <div class="flex flex-col">
+                    <h3 class="text-white text-sm font-bold tracking-wider uppercase mb-6">Categories</h3>
+                    <ul class="flex flex-col gap-3">
+                        <li><a href="/all-products"
+                                class="text-gray-400 text-sm hover:text-white transition-colors duration-300">All
+                                Products</a></li>
+                        <li><a href="/sunglasses"
+                                class="text-gray-400 text-sm hover:text-white transition-colors duration-300">Sunglasses</a>
+                        </li>
+                        <li><a href="/eyeglasses"
+                                class="text-gray-400 text-sm hover:text-white transition-colors duration-300">Eyeglasses</a>
+                        </li>
+                        <li><a href="/contact-lenses"
+                                class="text-gray-400 text-sm hover:text-white transition-colors duration-300">Contact
+                                Lenses</a></li>
+                    </ul>
+                </div>
+
+                <!-- Customer Support Column -->
+                <div class="flex flex-col">
+                    <h3 class="text-white text-sm font-bold tracking-wider uppercase mb-6">Customer Support</h3>
+                    <div class="flex flex-col gap-4">
+                        <div class="flex flex-col gap-1">
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                <span class="font-semibold text-white">Contact No</span> -
+                                <a href="tel:+919839972125" class="hover:text-white transition-colors duration-300">+91
+                                    9839972125</a>
+                            </p>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                <span class="font-semibold text-white">Contact Email</span> -
+                                <a href="mailto:zeeshan@gmail.com"
+                                    class="hover:text-white transition-colors duration-300">zeeshan@gmail.com</a>
+                            </p>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                <span class="font-semibold text-white">Primary Office Address:</span> Azad market, H.A.L
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Media Links -->
+            <div class="flex justify-between items-center pt-8 border-t border-gray-800">
+                <div class="text-gray-400 text-sm">
+                    <p>&copy;
+                        <script>document.write(new Date().getFullYear());</script> Zoptics. All rights reserved.
+                    </p>
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+                        class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full text-gray-400 hover:text-white hover:bg-gray-700 transition-all duration-300">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                    <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+                        class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full text-gray-400 hover:text-white hover:bg-gray-700 transition-all duration-300">
+                        <i class="fa fa-instagram"></i>
+                    </a>
+                    <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer"
+                        class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full text-gray-400 hover:text-white hover:bg-gray-700 transition-all duration-300">
+                        <i class="fa fa-pinterest"></i>
+                    </a>
+                </div>
+>>>>>>> 4a18ccddc25a38dc7bc4cf8d7efa9db82ea02f58
             </div>
         </div>
     </footer>
@@ -779,6 +1288,68 @@
     </div>
     <!-- Search End -->
 
+    <!-- Login/Signup Modal Begin -->
+    <div id="formModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md p-6 md:p-8 animate-fadeIn">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold" id="formTitle">Login</h2>
+                <button id="closeModal" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+
+            <!-- Login Form -->
+            <div id="loginBox" class="form-box">
+                <div class="mb-5">
+                    <label class="block text-sm font-medium mb-2">Username</label>
+                    <input type="text" placeholder="Enter username"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <div class="mb-5">
+                    <label class="block text-sm font-medium mb-2">Password</label>
+                    <input type="password" placeholder="Enter password"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <button
+                    class="w-full py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-medium">Login</button>
+                <p class="text-sm mt-4 text-center text-gray-600">
+                    Don't have an account?
+                    <a onclick="showSignup()" class="text-indigo-600 hover:underline cursor-pointer">Sign Up</a>
+                </p>
+            </div>
+
+            <!-- Signup Form -->
+            <div id="signupBox" class="form-box hidden">
+                <div class="mb-5">
+                    <label class="block text-sm font-medium mb-2">Full Name</label>
+                    <input type="text" placeholder="Enter full name"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <div class="mb-5">
+                    <label class="block text-sm font-medium mb-2">Email</label>
+                    <input type="email" placeholder="Enter email"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <div class="mb-5">
+                    <label class="block text-sm font-medium mb-2">Username</label>
+                    <input type="text" placeholder="Choose username"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <div class="mb-5">
+                    <label class="block text-sm font-medium mb-2">Password</label>
+                    <input type="password" placeholder="Create password"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <button
+                    class="w-full py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-medium">Sign
+                    Up</button>
+                <p class="text-sm mt-4 text-center text-gray-600">
+                    Already have an account?
+                    <a onclick="showLogin()" class="text-indigo-600 hover:underline cursor-pointer">Login</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Login/Signup Modal End -->
+
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -790,6 +1361,309 @@
     <script src="js/mixitup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+
+    <!-- Cart and Wishlist Management -->
+    <script src="js/cart.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script src="js/shared-utils.js"></script>
+
+    <!-- Custom Scripts for New Sections -->
+    <script>
+        // Trending Slider Functionality with Auto-Slide
+        const trendSlide1 = document.getElementById('trend-slide-1');
+        const trendSlide2 = document.getElementById('trend-slide-2');
+        const trendSlides = document.getElementById('trend-slides');
+        const trendSliderContainer = trendSlides ? trendSlides.closest('.relative') : null;
+
+        let autoSlideInterval;
+        let isPaused = false;
+        const autoSlideDelay = 4000; // 4 seconds
+
+        const goToSlide = (slideNumber) => {
+            if (!trendSlides) return;
+
+            if (slideNumber === 1) {
+                trendSlide1.checked = true;
+                trendSlides.style.transform = 'translateX(0%)';
+            } else {
+                trendSlide2.checked = true;
+                trendSlides.style.transform = 'translateX(-50%)';
+            }
+        };
+
+        const nextSlide = () => {
+            if (!trendSlide1 || !trendSlide2) return;
+            const currentSlide = trendSlide1.checked ? 1 : 2;
+            const nextSlideNum = currentSlide === 1 ? 2 : 1;
+            goToSlide(nextSlideNum);
+        };
+
+        const startAutoSlide = () => {
+            // Clear any existing interval
+            if (autoSlideInterval) {
+                clearInterval(autoSlideInterval);
+            }
+
+            // Start auto-slide
+            autoSlideInterval = setInterval(() => {
+                if (!isPaused) {
+                    nextSlide();
+                }
+            }, autoSlideDelay);
+        };
+
+        if (trendSlide1 && trendSlide2 && trendSlides) {
+            // Set initial state
+            trendSlides.style.transform = 'translateX(0%)';
+
+            // Manual navigation handlers
+            trendSlide1.addEventListener('change', () => {
+                if (trendSlide1.checked) {
+                    trendSlides.style.transform = 'translateX(0%)';
+                    // Reset auto-slide timer when manually navigating
+                    startAutoSlide();
+                }
+            });
+
+            trendSlide2.addEventListener('change', () => {
+                if (trendSlide2.checked) {
+                    trendSlides.style.transform = 'translateX(-50%)';
+                    // Reset auto-slide timer when manually navigating
+                    startAutoSlide();
+                }
+            });
+
+            // Pause on hover
+            if (trendSliderContainer) {
+                trendSliderContainer.addEventListener('mouseenter', () => {
+                    isPaused = true;
+                });
+
+                trendSliderContainer.addEventListener('mouseleave', () => {
+                    isPaused = false;
+                });
+            }
+
+            // Start auto-slide on page load
+            startAutoSlide();
+
+            // Pause auto-slide when page is not visible (tab switch)
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) {
+                    isPaused = true;
+                } else {
+                    isPaused = false;
+                    startAutoSlide();
+                }
+            });
+        }
+
+        // Login/Signup Modal Functionality
+        const toggleFormBtn = document.getElementById('toggleFormBtn');
+        const toggleFormBtnMobile = document.getElementById('toggleFormBtnMobile');
+        const formModal = document.getElementById('formModal');
+        const closeModal = document.getElementById('closeModal');
+        const loginBox = document.getElementById('loginBox');
+        const signupBox = document.getElementById('signupBox');
+        const formTitle = document.getElementById('formTitle');
+
+        const openModal = () => {
+            if (formModal) {
+                formModal.classList.remove('hidden');
+                formModal.classList.add('flex');
+            }
+        };
+
+        if (toggleFormBtn) {
+            toggleFormBtn.addEventListener('click', openModal);
+        }
+
+        if (toggleFormBtnMobile) {
+            toggleFormBtnMobile.addEventListener('click', () => {
+                openModal();
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (mobileMenu) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        }
+
+        if (closeModal && formModal) {
+            closeModal.addEventListener('click', () => {
+                formModal.classList.add('hidden');
+                formModal.classList.remove('flex');
+            });
+        }
+
+        // Close modal when clicking outside
+        if (formModal) {
+            formModal.addEventListener('click', (e) => {
+                if (e.target === formModal) {
+                    formModal.classList.add('hidden');
+                    formModal.classList.remove('flex');
+                }
+            });
+        }
+
+        // Form switching functions
+        function showSignup() {
+            if (loginBox && signupBox && formTitle) {
+                loginBox.classList.add('hidden');
+                signupBox.classList.remove('hidden');
+                formTitle.textContent = 'Sign Up';
+            }
+        }
+
+        function showLogin() {
+            if (loginBox && signupBox && formTitle) {
+                signupBox.classList.add('hidden');
+                loginBox.classList.remove('hidden');
+                formTitle.textContent = 'Login';
+            }
+        }
+
+        // Make functions globally available
+        window.showSignup = showSignup;
+        window.showLogin = showLogin;
+
+        // Filter buttons functionality
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', function () {
+                // Remove active class from all buttons
+                document.querySelectorAll('.filter-btn').forEach(b => {
+                    b.classList.remove('active', 'bg-gray-900', 'text-white');
+                    b.classList.add('text-gray-600');
+                });
+
+                // Add active class to clicked button
+                this.classList.add('active', 'bg-gray-900', 'text-white');
+                this.classList.remove('text-gray-600');
+            });
+        });
+    </script>
+
+    <!-- Custom Styles for Animations -->
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 0.4s ease;
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Trending Slider Transitions */
+        #trend-slides {
+            transition: transform 0.7s ease-in-out;
+        }
+
+        /* Ensure modal is centered */
+        #formModal.flex {
+            display: flex;
+        }
+
+        /* Filter button active state */
+        .filter-btn.active {
+            background-color: #111827;
+            color: white;
+        }
+
+        /* Product hover effects */
+        .product__item {
+            transition: all 0.3s ease;
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+
+    <!-- Product Conversion Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Convert remaining Bootstrap product items to Tailwind
+            const productItems = document.querySelectorAll('.product__item:not([data-converted])');
+
+            productItems.forEach((item, index) => {
+                if (item.closest('.col-lg-3')) {
+                    const productData = {
+                        id: item.dataset.productId || `product-${index + 1}`,
+                        name: item.querySelector('h6')?.textContent?.trim() || 'Product',
+                        price: item.querySelector('h5')?.textContent?.replace(/[^0-9.]/g, '') || '0',
+                        image: item.querySelector('[data-setbg]')?.dataset.setbg || item.querySelector('img')?.src || 'img/product/product-1.jpg',
+                        rating: item.querySelectorAll('.fa-star:not(.fa-star-o)').length,
+                        isSale: item.classList.contains('sale'),
+                        label: item.querySelector('.label')?.textContent
+                    };
+
+                    const newItem = document.createElement('div');
+                    newItem.className = 'mix group';
+                    newItem.setAttribute('data-converted', 'true');
+                    newItem.innerHTML = `
+                        <div class="product__item bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300" 
+                             data-product-id="${productData.id}" 
+                             data-product-name="${productData.name}" 
+                             data-product-price="${productData.price}" 
+                             data-product-image="${productData.image}">
+                            <div class="relative overflow-hidden">
+                                <img src="${productData.image}" alt="${productData.name}" class="w-full h-[300px] object-cover group-hover:scale-110 transition-transform duration-500">
+                                ${productData.label ? `<span class="absolute top-4 left-4 ${productData.isSale ? 'bg-red-500' : 'bg-green-500'} text-white text-xs font-bold px-3 py-1 rounded-full">${productData.label}</span>` : ''}
+                                <div class="absolute top-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <a href="#" class="wishlist-btn bg-white p-2.5 rounded-full shadow-md hover:bg-red-50 transition-colors" data-wishlist-btn><i class="fa fa-heart-o text-gray-700"></i></a>
+                                    <a href="#" class="bg-white p-2.5 rounded-full shadow-md hover:bg-gray-50 transition-colors"><i class="fa fa-search text-gray-700"></i></a>
+                                </div>
+                            </div>
+                            <div class="p-5">
+                                <h6 class="text-lg font-semibold text-gray-900 mb-2">${productData.name}</h6>
+                                <div class="flex items-center gap-1 mb-3">
+                                    ${Array.from({ length: 5 }, (_, i) =>
+                        `<i class="fa ${i < productData.rating ? 'fa-star text-yellow-400' : 'fa-star-o text-gray-300'} text-sm"></i>`
+                    ).join('')}
+                                </div>
+                                <div class="flex items-center justify-between mb-4">
+                                    <h5 class="text-xl font-bold text-gray-900">$${parseFloat(productData.price).toFixed(2)}</h5>
+                                </div>
+                                <a href="#" class="add-cart block w-full text-center py-3 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-all duration-300">+ Add To Cart</a>
+                            </div>
+                        </div>
+                    `;
+
+                    const parent = item.closest('.col-lg-3, .col-md-6, .col-sm-6');
+                    if (parent) {
+                        parent.replaceWith(newItem);
+                    }
+                }
+            });
+        });
+    </script>
 </body>
+
+</html>
 
 </html>
