@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Accordion</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+    <div style="padding: 50px;">
+        <h1>Test Sidebar Accordion</h1>
+        
+        <div class="shop__sidebar">
+            <div class="shop__sidebar__accordion">
+                <div class="accordion" id="accordionExample">
+                    <div class="card">
+                        <div class="card-heading">
+                            <a class="active" data-toggle="collapse" data-target="#collapseOne">CATEGORIES TEST</a>
+                        </div>
+                        <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <ul>
+                                    <li><a href="#">Test Item 1</a></li>
+                                    <li><a href="#">Test Item 2</a></li>
+                                    <li><a href="#">Test Item 3</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-heading">
+                            <a data-toggle="collapse" data-target="#collapseTwo">FILTER PRICE TEST</a>
+                        </div>
+                        <div id="collapseTwo" class="collapse" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <ul>
+                                    <li><a href="#">$0 - $50</a></li>
+                                    <li><a href="#">$50 - $100</a></li>
+                                    <li><a href="#">$100+</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-heading">
+                            <a data-toggle="collapse" data-target="#collapseThree">COLORS TEST</a>
+                        </div>
+                        <div id="collapseThree" class="collapse" data-parent="#accordionExample">
+                            <div class="card-body">
+                                <ul>
+                                    <li><a href="#">Red</a></li>
+                                    <li><a href="#">Blue</a></li>
+                                    <li><a href="#">Green</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="js/main.js"></script>
+    
+    <script>
+        // Debug logging
+        console.log('jQuery version:', $.fn.jquery);
+        console.log('Accordion links found:', $('.shop__sidebar__accordion .card-heading a').length);
+        
+        // Test click
+        $('.shop__sidebar__accordion .card-heading a').on('click', function() {
+            console.log('Link clicked:', $(this).text());
+        });
+    </script>
+</body>
+</html>
+

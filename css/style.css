@@ -1237,6 +1237,10 @@ ol {
 
 .shop__sidebar__accordion .card-heading {
 	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 .shop__sidebar__accordion .card-heading a {
@@ -1245,6 +1249,50 @@ ol {
 	font-weight: 700;
 	text-transform: uppercase;
 	display: block;
+	position: relative;
+	padding-right: 25px;
+	cursor: pointer;
+	-webkit-transition: all, 0.3s;
+	-o-transition: all, 0.3s;
+	transition: all, 0.3s;
+	text-decoration: none;
+}
+
+.shop__sidebar__accordion .card-heading a:after {
+  content: "\f107";
+  font-family: "FontAwesome";
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 16px;
+  -webkit-transition: all, 0.3s;
+  -o-transition: all, 0.3s;
+  transition: all, 0.3s;
+}
+
+.shop__sidebar__accordion .card-heading a.active:after {
+  -webkit-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+}
+
+.shop__sidebar__accordion .card-heading a:hover {
+  color: #ca1515;
+}
+
+.shop__sidebar__accordion .collapse {
+	max-height: 0;
+	overflow: hidden;
+	-webkit-transition: max-height 0.3s ease-out;
+	-o-transition: max-height 0.3s ease-out;
+	transition: max-height 0.3s ease-out;
+}
+
+.shop__sidebar__accordion .collapse.show {
+	max-height: 1000px;
+	-webkit-transition: max-height 0.3s ease-in;
+	-o-transition: max-height 0.3s ease-in;
+	transition: max-height 0.3s ease-in;
 }
 
 .shop__sidebar__categories ul,
