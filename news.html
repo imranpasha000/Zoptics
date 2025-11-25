@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Latest News from boAt">
+    <meta name="keywords" content="boAt, news, updates, announcements">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>News | Zoptics</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Offcanvas Menu Begin -->
+    <div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__option">
+            <div class="offcanvas__links">
+                <a href="#">Sign in</a>
+                <a href="#">FAQs</a>
+            </div>
+            <div class="offcanvas__top__hover">
+                <span>Usd <i class="arrow_carrot-down"></i></span>
+                <ul>
+                    <li>USD</li>
+                    <li>EUR</li>
+                    <li>USD</li>
+                </ul>
+            </div>
+        </div>
+        <div class="offcanvas__nav__option">
+            <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
+            <a href="wishlist.html"><img src="img/icon/heart.png" alt=""> <span id="wishlist-count-offcanvas"
+                    class="wishlist-count" style="display: none;">0</span></a>
+            <a href="shopping-cart.html"><img src="img/icon/cart.png" alt=""> <span id="cart-count-offcanvas"
+                    class="cart-count" style="display: none;">0</span></a>
+            <div class="price cart-total">$0.00</div>
+        </div>
+        <div id="mobile-menu-wrap"></div>
+        <div class="offcanvas__text">
+            <p>Free shipping, 30-day return or refund guarantee.</p>
+        </div>
+    </div>
+    <!-- Offcanvas Menu End -->
+
+    <!-- Header Section start -->
+    <header class="bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-4">
+            <!-- Logo -->
+            <a href="index.html" class="block flex-shrink-0 group">
+                <div class="flex flex-col transition-all duration-300">
+                    <span
+                        class="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-gray-700 transition-colors tracking-tight">ZOPTICS</span>
+                    <span
+                        class="text-[10px] sm:text-xs tracking-[0.3em] text-gray-500 group-hover:text-gray-700 transition-colors uppercase">eyewear</span>
+                </div>
+            </a>
+
+            <!-- Navbar (Desktop) -->
+            <nav class="hidden md:flex items-center space-x-8 lg:space-x-12">
+                <a href="index.html#sunglasses"
+                    class="text-sm font-semibold text-gray-700 hover:text-gray-900 relative transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 after:transition-all hover:after:w-full">Sunglasses</a>
+                <a href="index.html#eyeglasses"
+                    class="text-sm font-semibold text-gray-700 hover:text-gray-900 relative transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 after:transition-all hover:after:w-full">Eyeglasses</a>
+                <a href="index.html#newarrivals"
+                    class="text-sm font-semibold text-gray-700 hover:text-gray-900 relative transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 after:transition-all hover:after:w-full">New Arrivals</a>
+            </nav>
+
+            <!-- Right Icons -->
+            <div class="flex items-center space-x-3 sm:space-x-4">
+                <button id="toggleFormBtn"
+                    class="hidden md:block px-5 py-2 text-xs font-semibold text-gray-700 hover:text-gray-900 border border-gray-300 rounded-full hover:border-gray-900 transition-all duration-300 hover:shadow-sm">
+                    LOG IN / SIGNUP
+                </button>
+                <a href="wishlist.html"
+                    class="relative p-2.5 hover:bg-gray-50 rounded-full transition-all duration-300 group">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="w-5 h-5 text-gray-700 group-hover:text-red-500 transition-colors" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                    <span id="wishlist-count"
+                        class="cart-badge absolute -top-0.5 -right-0.5 bg-red-500 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center shadow-sm"
+                        style="display: none;">0</span>
+                </a>
+                <a href="shopping-cart.html"
+                    class="relative p-2.5 hover:bg-gray-50 rounded-full transition-all duration-300 group">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="w-5 h-5 text-gray-700 group-hover:text-gray-900 transition-colors" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <span id="cart-count"
+                        class="cart-badge absolute -top-0.5 -right-0.5 bg-gray-900 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center shadow-sm"
+                        style="display: none;">0</span>
+                </a>
+                <button id="searchButton" class="p-2.5 hover:bg-gray-50 rounded-full transition-all duration-300 group">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="w-5 h-5 text-gray-700 group-hover:text-gray-900 transition-colors" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M21 21l-4.35-4.35M17 10.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" />
+                    </svg>
+                </button>
+                <button id="menu-btn" class="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                    <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    <!-- Page Header -->
+    <section class="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">News & Updates</h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+                    Stay updated with the latest news, product launches, and announcements from boAt
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Content -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- News Item 1 -->
+                <article class="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-red-500 to-red-600 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <div class="text-4xl mb-2">📱</div>
+                            <div class="text-sm font-semibold">New Launch</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-gray-500 mb-2">December 15, 2024</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">boAt Launches Next-Gen Smartwatch Series</h3>
+                        <p class="text-gray-600 mb-4">Introducing our latest smartwatch collection with advanced health tracking, extended battery life, and premium design.</p>
+                        <a href="#" class="text-red-600 font-semibold hover:text-red-700 transition-colors">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- News Item 2 -->
+                <article class="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <div class="text-4xl mb-2">🏆</div>
+                            <div class="text-sm font-semibold">Award</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-gray-500 mb-2">December 10, 2024</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">boAt Wins Best Audio Brand Award 2024</h3>
+                        <p class="text-gray-600 mb-4">We're honored to receive the Best Audio Brand Award for the third consecutive year, recognizing our commitment to quality.</p>
+                        <a href="#" class="text-red-600 font-semibold hover:text-red-700 transition-colors">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- News Item 3 -->
+                <article class="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-purple-500 to-purple-600 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <div class="text-4xl mb-2">🎉</div>
+                            <div class="text-sm font-semibold">Milestone</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-gray-500 mb-2">December 5, 2024</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">10 Million Customers Milestone Achieved</h3>
+                        <p class="text-gray-600 mb-4">We've reached an incredible milestone of 10 million happy customers! Thank you for being part of our journey.</p>
+                        <a href="#" class="text-red-600 font-semibold hover:text-red-700 transition-colors">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- News Item 4 -->
+                <article class="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-green-500 to-green-600 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <div class="text-4xl mb-2">🌱</div>
+                            <div class="text-sm font-semibold">Sustainability</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-gray-500 mb-2">November 28, 2024</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">New Eco-Friendly Packaging Initiative</h3>
+                        <p class="text-gray-600 mb-4">boAt commits to 100% recyclable packaging by 2025 as part of our sustainability efforts.</p>
+                        <a href="#" class="text-red-600 font-semibold hover:text-red-700 transition-colors">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- News Item 5 -->
+                <article class="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <div class="text-4xl mb-2">🎵</div>
+                            <div class="text-sm font-semibold">Product</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-gray-500 mb-2">November 20, 2024</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">True Wireless Earbuds with ANC Technology</h3>
+                        <p class="text-gray-600 mb-4">Experience crystal-clear audio with our new TWS earbuds featuring Active Noise Cancellation.</p>
+                        <a href="#" class="text-red-600 font-semibold hover:text-red-700 transition-colors">Read More →</a>
+                    </div>
+                </article>
+
+                <!-- News Item 6 -->
+                <article class="bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                    <div class="h-48 bg-gradient-to-br from-indigo-500 to-indigo-600 flex items-center justify-center">
+                        <div class="text-center text-white">
+                            <div class="text-4xl mb-2">🤝</div>
+                            <div class="text-sm font-semibold">Partnership</div>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-gray-500 mb-2">November 15, 2024</div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-3">Strategic Partnership with Leading Tech Company</h3>
+                        <p class="text-gray-600 mb-4">boAt announces strategic partnership to bring cutting-edge technology to our product lineup.</p>
+                        <a href="#" class="text-red-600 font-semibold hover:text-red-700 transition-colors">Read More →</a>
+                    </div>
+                </article>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button class="px-8 py-3 bg-gray-900 text-white font-semibold rounded-full hover:bg-gray-800 transition-all duration-300">
+                    Load More News
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
+                <div class="lg:col-span-1">
+                    <div class="mb-6">
+                        <h2 class="text-3xl font-black text-gray-900 tracking-tight mb-2">
+                            bo<span class="text-red-600">A</span>t
+                        </h2>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            India's fastest growing audio & wearables brand.
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-900 mb-4 text-base">Shop</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">True Wireless Earbuds</a></li>
+                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Wireless Headphones</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-900 mb-4 text-base">Help</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Track Your Order</a></li>
+                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Warranty & Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-gray-900 mb-4 text-base">Company</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="about-boat.html" class="text-gray-600 text-sm hover:text-red-600 transition-colors">About boAt</a></li>
+                        <li><a href="news.html" class="text-gray-600 text-sm hover:text-red-600 transition-colors">News</a></li>
+                        <li><a href="read-our-blog.html" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Read Our Blog</a></li>
+                        <li><a href="careers.html" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Careers</a></li>
+                        <li><a href="security.html" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Security</a></li>
+                        <li><a href="investor-relations.html" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Investor Relations</a></li>
+                        <li><a href="social-responsibility.html" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Social Responsibility</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 pt-8 mt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <div class="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6 text-sm">
+                        <a href="#" class="text-gray-600 hover:text-red-600 transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-600 hover:text-red-600 transition-colors">Terms of Use</a>
+                    </div>
+                    <p class="text-sm text-gray-600 text-center md:text-right">
+                        Copyright © <span id="year"></span> All rights reserved | Made with <span class="text-red-600">❤</span> by boAt
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery.nicescroll.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/jquery.countdown.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script src="js/shared-utils.js"></script>
+</body>
+
+</html>
+
