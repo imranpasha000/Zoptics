@@ -3,11 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Male_Fashion Template">
-    <meta name="keywords" content="Male_Fashion, unica, creative, html">
+    <meta name="description" content="About boAt - India's fastest growing audio & wearables brand">
+    <meta name="keywords" content="boAt, about, company, audio, wearables">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Male-Fashion | Template</title>
+    <title>About boAt | Zoptics</title>
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700;800;900&display=swap"
@@ -50,9 +50,11 @@
         </div>
         <div class="offcanvas__nav__option">
             <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
-            <a href="#"><img src="img/icon/heart.png" alt=""></a>
-            <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
-            <div class="price">$0.00</div>
+            <a href="wishlist.html"><img src="img/icon/heart.png" alt=""> <span id="wishlist-count-offcanvas"
+                    class="wishlist-count" style="display: none;">0</span></a>
+            <a href="shopping-cart.html"><img src="img/icon/cart.png" alt=""> <span id="cart-count-offcanvas"
+                    class="cart-count" style="display: none;">0</span></a>
+            <div class="price cart-total">$0.00</div>
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__text">
@@ -62,170 +64,175 @@
     <!-- Offcanvas Menu End -->
 
     <!-- Header Section start -->
-    <header class="border-b border-gray-200 bg-white sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
-
+    <header class="bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-4">
             <!-- Logo -->
             <a href="index.html" class="block flex-shrink-0 group">
                 <div class="flex flex-col transition-all duration-300">
                     <span
-                        class="text-base sm:text-lg font-medium text-black group-hover:text-gray-700 transition-colors">Z
-                        O P T I C S</span>
+                        class="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-gray-700 transition-colors tracking-tight">ZOPTICS</span>
                     <span
-                        class="text-xs tracking-[0.2em] text-gray-500 group-hover:text-gray-700 transition-colors">eyewear</span>
+                        class="text-[10px] sm:text-xs tracking-[0.3em] text-gray-500 group-hover:text-gray-700 transition-colors uppercase">eyewear</span>
                 </div>
             </a>
 
             <!-- Navbar (Desktop) -->
-            <nav class="hidden md:flex items-center space-x-6 lg:space-x-10">
-                <button class="tab-btn text-gray-800 hover:text-black font-medium relative transition-colors"
-                    data-tab="sunglasses">Sunglasses</button>
-                <button class="tab-btn text-gray-800 hover:text-black font-medium relative transition-colors"
-                    data-tab="eyeglasses">Eyeglasses</button>
-                <button class="tab-btn text-gray-800 hover:text-black font-medium relative transition-colors"
-                    data-tab="newarrivals">New Arrivals</button>
+            <nav class="hidden md:flex items-center space-x-8 lg:space-x-12">
+                <a href="index.html#sunglasses"
+                    class="text-sm font-semibold text-gray-700 hover:text-gray-900 relative transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 after:transition-all hover:after:w-full">Sunglasses</a>
+                <a href="index.html#eyeglasses"
+                    class="text-sm font-semibold text-gray-700 hover:text-gray-900 relative transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 after:transition-all hover:after:w-full">Eyeglasses</a>
+                <a href="index.html#newarrivals"
+                    class="text-sm font-semibold text-gray-700 hover:text-gray-900 relative transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 after:transition-all hover:after:w-full">New Arrivals</a>
             </nav>
 
             <!-- Right Icons -->
-            <div class="flex items-center space-x-2 sm:space-x-4">
-                <!-- Search Icon -->
-                <button id="searchButton" class="p-2 hover:text-gray-700 transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
+            <div class="flex items-center space-x-3 sm:space-x-4">
+                <button id="toggleFormBtn"
+                    class="hidden md:block px-5 py-2 text-xs font-semibold text-gray-700 hover:text-gray-900 border border-gray-300 rounded-full hover:border-gray-900 transition-all duration-300 hover:shadow-sm">
+                    LOG IN / SIGNUP
+                </button>
+                <a href="wishlist.html"
+                    class="relative p-2.5 hover:bg-gray-50 rounded-full transition-all duration-300 group">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="w-5 h-5 text-gray-700 group-hover:text-red-500 transition-colors" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                    <span id="wishlist-count"
+                        class="cart-badge absolute -top-0.5 -right-0.5 bg-red-500 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center shadow-sm"
+                        style="display: none;">0</span>
+                </a>
+                <a href="shopping-cart.html"
+                    class="relative p-2.5 hover:bg-gray-50 rounded-full transition-all duration-300 group">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="w-5 h-5 text-gray-700 group-hover:text-gray-900 transition-colors" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <span id="cart-count"
+                        class="cart-badge absolute -top-0.5 -right-0.5 bg-gray-900 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center shadow-sm"
+                        style="display: none;">0</span>
+                </a>
+                <button id="searchButton" class="p-2.5 hover:bg-gray-50 rounded-full transition-all duration-300 group">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="w-5 h-5 text-gray-700 group-hover:text-gray-900 transition-colors" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                             d="M21 21l-4.35-4.35M17 10.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" />
                     </svg>
                 </button>
-
-                <!-- Mobile menu button -->
-                <button id="menu-btn" class="md:hidden p-2 hover:bg-gray-100 rounded transition-colors">
+                <button id="menu-btn" class="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors">
                     <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                             d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
-                    <svg id="close-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 hidden" fill="none"
-                        viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                            d="M6 18L18 6M6 6l12 12" />
-                    </svg>
                 </button>
             </div>
-        </div>
-
-        <!-- Search Bar (Hidden by default) -->
-        <div id="searchBar" class="hidden border-t border-gray-200 bg-gray-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
-                <div class="flex items-center space-x-2">
-                    <input type="text" placeholder="Search for sunglasses, eyeglasses..."
-                        class="flex-1 p-2 sm:p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black">
-                    <button
-                        class="px-4 sm:px-6 py-2 sm:py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors">Search</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Dropdown Section (Desktop) -->
-        <div id="submenu" class="hidden border-t border-gray-200 bg-white">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 py-6 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 text-center">
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-white">
-            <nav class="flex flex-col py-2">
-                <button class="mobile-tab-btn text-left px-6 py-3 hover:bg-gray-50 transition-colors"
-                    data-tab="sunglasses">
-                    <span class="font-medium">Sunglasses</span>
-                </button>
-                <div id="mobile-submenu-sunglasses" class="hidden bg-gray-50 px-6 py-3">
-                    <div class="grid grid-cols-2 gap-3"></div>
-                </div>
-
-                <button class="mobile-tab-btn text-left px-6 py-3 hover:bg-gray-50 transition-colors"
-                    data-tab="eyeglasses">
-                    <span class="font-medium">Eyeglasses</span>
-                </button>
-                <div id="mobile-submenu-eyeglasses" class="hidden bg-gray-50 px-6 py-3">
-                    <div class="grid grid-cols-2 gap-3"></div>
-                </div>
-
-                <button class="mobile-tab-btn text-left px-6 py-3 hover:bg-gray-50 transition-colors"
-                    data-tab="newarrivals">
-                    <span class="font-medium">New Arrivals</span>
-                </button>
-                <div id="mobile-submenu-newarrivals" class="hidden bg-gray-50 px-6 py-3">
-                    <div class="grid grid-cols-2 gap-3"></div>
-                </div>
-            </nav>
         </div>
     </header>
     <!-- Header Section End -->
 
-    <!-- Map Begin -->
-    <div class="map">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d111551.9926412813!2d-90.27317134641879!3d38.606612219170856!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54eab584e432360b%3A0x1c3bb99243deb742!2sUnited%20States!5e0!3m2!1sen!2sbd!4v1597926938024!5m2!1sen!2sbd"
-            height="500" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-    </div>
-    <!-- Map End -->
+    <!-- Page Header -->
+    <section class="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-16 md:py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">About boAt</h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto">
+                    India's fastest growing audio & wearables brand. The most incredible range of wireless earphones, earbuds, headphones, smart watches, and home audio.
+                </p>
+            </div>
+        </div>
+    </section>
 
-    <!-- Contact Section Begin -->
-    <section class="contact spad">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6">
-                    <div class="contact__text">
-                        <div class="section-title">
-                            <span>Information</span>
-                            <h2>Contact Us</h2>
-                            <p>As you might expect of a company that began as a high-end interiors contractor, we pay
-                                strict attention.</p>
-                        </div>
-                        <ul>
-                            <li>
-                                <h4>America</h4>
-                                <p>195 E Parker Square Dr, Parker, CO 801 <br />+43 982-314-0958</p>
-                            </li>
-                            <li>
-                                <h4>France</h4>
-                                <p>109 Avenue Léon, 63 Clermont-Ferrand <br />+12 345-423-9893</p>
-                            </li>
-                        </ul>
+    <!-- About Content -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Story</h2>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Founded in 2016, boAt has emerged as India's most loved audio and lifestyle brand. We started with a simple mission: to make premium quality audio products accessible to everyone.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed mb-4">
+                        Today, we're proud to be one of the fastest-growing consumer electronics brands in India, with millions of happy customers who trust us for their audio and wearable needs.
+                    </p>
+                    <p class="text-gray-600 leading-relaxed">
+                        Our commitment to innovation, quality, and customer satisfaction has made us a household name across the country.
+                    </p>
+                </div>
+                <div class="bg-gray-100 rounded-2xl p-8 h-96 flex items-center justify-center">
+                    <div class="text-center">
+                        <h3 class="text-6xl font-black text-gray-900 mb-2">
+                            bo<span class="text-red-600">A</span>t
+                        </h3>
+                        <p class="text-gray-600">Since 2016</p>
                     </div>
                 </div>
-                <div class="col-lg-6 col-md-6">
-                    <div class="contact__form">
-                        <form action="#">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <input type="text" placeholder="Name">
-                                </div>
-                                <div class="col-lg-6">
-                                    <input type="text" placeholder="Email">
-                                </div>
-                                <div class="col-lg-12">
-                                    <textarea placeholder="Message"></textarea>
-                                    <button type="submit" class="site-btn">Send Message</button>
-                                </div>
-                            </div>
-                        </form>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                <div class="text-center p-6 bg-gray-50 rounded-xl">
+                    <div class="text-4xl font-bold text-red-600 mb-2">10M+</div>
+                    <div class="text-gray-600">Happy Customers</div>
+                </div>
+                <div class="text-center p-6 bg-gray-50 rounded-xl">
+                    <div class="text-4xl font-bold text-red-600 mb-2">500+</div>
+                    <div class="text-gray-600">Products</div>
+                </div>
+                <div class="text-center p-6 bg-gray-50 rounded-xl">
+                    <div class="text-4xl font-bold text-red-600 mb-2">50+</div>
+                    <div class="text-gray-600">Awards Won</div>
+                </div>
+            </div>
+
+            <div class="mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">Our Mission</h2>
+                <div class="max-w-4xl mx-auto">
+                    <p class="text-lg text-gray-600 leading-relaxed text-center">
+                        To democratize premium audio and lifestyle products, making them accessible to every Indian. We believe that great sound and style shouldn't be a luxury—it should be a way of life.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8 text-center">Our Values</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition-shadow">
+                        <div class="text-3xl mb-4">🎯</div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Innovation</h3>
+                        <p class="text-gray-600">Constantly pushing boundaries in audio technology</p>
+                    </div>
+                    <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition-shadow">
+                        <div class="text-3xl mb-4">💎</div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Quality</h3>
+                        <p class="text-gray-600">Premium products that exceed expectations</p>
+                    </div>
+                    <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition-shadow">
+                        <div class="text-3xl mb-4">❤️</div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Customer First</h3>
+                        <p class="text-gray-600">Your satisfaction is our priority</p>
+                    </div>
+                    <div class="p-6 border border-gray-200 rounded-xl hover:shadow-lg transition-shadow">
+                        <div class="text-3xl mb-4">🚀</div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Growth</h3>
+                        <p class="text-gray-600">Expanding horizons, reaching new heights</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Contact Section End -->
 
     <!-- Footer Section -->
     <footer class="bg-gray-50 border-t border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <!-- Main Footer Content -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
-
                 <!-- Left Section - Logo & Newsletter -->
                 <div class="lg:col-span-1">
-                    <!-- Logo -->
                     <div class="mb-6">
                         <h2 class="text-3xl font-black text-gray-900 tracking-tight mb-2">
                             bo<span class="text-red-600">A</span>t
@@ -235,8 +242,6 @@
                             earphones, earbuds, headphones, smart watches, and home audio.
                         </p>
                     </div>
-
-                    <!-- Newsletter -->
                     <div class="mb-6">
                         <h3 class="text-base font-semibold text-gray-900 mb-3">Subscribe to our email alerts!</h3>
                         <form
@@ -252,8 +257,6 @@
                             </button>
                         </form>
                     </div>
-
-                    <!-- Social Media Links -->
                     <div class="flex items-center space-x-4">
                         <a href="#" class="text-gray-600 hover:text-red-600 transition-colors" aria-label="Facebook">
                             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -281,7 +284,6 @@
                         </a>
                     </div>
                 </div>
-
                 <!-- Shop Column -->
                 <div>
                     <h4 class="font-semibold text-gray-900 mb-4 text-base">Shop</h4>
@@ -296,19 +298,8 @@
                                 Speakers</a></li>
                         <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Home
                                 Audio</a></li>
-                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Mobile
-                                Accessories</a></li>
-                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Smart
-                                Watches</a></li>
-                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">TRebel</a>
-                        </li>
-                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Misfit
-                                Trimmers</a></li>
-                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Refer &
-                                Earn</a></li>
                     </ul>
                 </div>
-
                 <!-- Help Column -->
                 <div>
                     <h4 class="font-semibold text-gray-900 mb-4 text-base">Help</h4>
@@ -321,34 +312,28 @@
                                 Policy</a></li>
                         <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Service
                                 Centers</a></li>
-                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Bulk
-                                Orders</a></li>
-                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Why Buy
-                                Direct</a></li>
                     </ul>
                 </div>
-
                 <!-- Company Column -->
                 <div>
                     <h4 class="font-semibold text-gray-900 mb-4 text-base">Company</h4>
                     <ul class="space-y-2.5">
-                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">About
+                        <li><a href="about-boat.html" class="text-gray-600 text-sm hover:text-red-600 transition-colors">About
                                 boAt</a></li>
-                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">News</a></li>
-                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Read Our
+                        <li><a href="news.html" class="text-gray-600 text-sm hover:text-red-600 transition-colors">News</a></li>
+                        <li><a href="read-our-blog.html" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Read Our
                                 Blog</a></li>
-                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Careers</a>
+                        <li><a href="careers.html" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Careers</a>
                         </li>
-                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Security</a>
+                        <li><a href="security.html" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Security</a>
                         </li>
-                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Investor
+                        <li><a href="investor-relations.html" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Investor
                                 Relations</a></li>
-                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Social
+                        <li><a href="social-responsibility.html" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Social
                                 Responsibility</a></li>
                     </ul>
                 </div>
             </div>
-
             <!-- Footer Bottom -->
             <div class="border-t border-gray-200 pt-8 mt-8">
                 <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
@@ -356,8 +341,6 @@
                         <a href="#" class="text-gray-600 hover:text-red-600 transition-colors">Privacy Policy</a>
                         <a href="#" class="text-gray-600 hover:text-red-600 transition-colors">Terms of Use</a>
                         <a href="#" class="text-gray-600 hover:text-red-600 transition-colors">Warranty Policy</a>
-                        <a href="#" class="text-gray-600 hover:text-red-600 transition-colors">D2D Paid Repair Service
-                            Policy</a>
                     </div>
                     <p class="text-sm text-gray-600 text-center md:text-right">
                         Copyright © <span id="year"></span> All rights reserved | Made with <span
@@ -372,17 +355,6 @@
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 
-    <!-- Search Begin -->
-    <div class="search-model">
-        <div class="h-100 d-flex align-items-center justify-content-center">
-            <div class="search-close-switch">+</div>
-            <form class="search-model-form">
-                <input type="text" id="search-input" placeholder="Search here.....">
-            </form>
-        </div>
-    </div>
-    <!-- Search End -->
-
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -394,6 +366,10 @@
     <script src="js/mixitup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script src="js/shared-utils.js"></script>
 </body>
 
 </html>
+

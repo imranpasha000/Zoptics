@@ -50,9 +50,11 @@
         </div>
         <div class="offcanvas__nav__option">
             <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
-            <a href="#"><img src="img/icon/heart.png" alt=""></a>
-            <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
-            <div class="price">$0.00</div>
+            <a href="wishlist.html"><img src="img/icon/heart.png" alt=""> <span id="wishlist-count-offcanvas"
+                    class="wishlist-count" style="display: none;">0</span></a>
+            <a href="shopping-cart.html"><img src="img/icon/cart.png" alt=""> <span id="cart-count-offcanvas"
+                    class="cart-count" style="display: none;">0</span></a>
+            <div class="price cart-total">$0.00</div>
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__text">
@@ -62,43 +64,80 @@
     <!-- Offcanvas Menu End -->
 
     <!-- Header Section start -->
-    <header class="border-b border-gray-200 bg-white sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-3 sm:py-4">
+    <header class="bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8 py-4">
 
             <!-- Logo -->
             <a href="index.html" class="block flex-shrink-0 group">
                 <div class="flex flex-col transition-all duration-300">
                     <span
-                        class="text-base sm:text-lg font-medium text-black group-hover:text-gray-700 transition-colors">Z
-                        O P T I C S</span>
+                        class="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-gray-700 transition-colors tracking-tight">ZOPTICS</span>
                     <span
-                        class="text-xs tracking-[0.2em] text-gray-500 group-hover:text-gray-700 transition-colors">eyewear</span>
+                        class="text-[10px] sm:text-xs tracking-[0.3em] text-gray-500 group-hover:text-gray-700 transition-colors uppercase">eyewear</span>
                 </div>
             </a>
 
             <!-- Navbar (Desktop) -->
-            <nav class="hidden md:flex items-center space-x-6 lg:space-x-10">
-                <button class="tab-btn text-gray-800 hover:text-black font-medium relative transition-colors"
+            <nav class="hidden md:flex items-center space-x-8 lg:space-x-12">
+                <button
+                    class="tab-btn text-sm font-semibold text-gray-700 hover:text-gray-900 relative transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 after:transition-all hover:after:w-full"
                     data-tab="sunglasses">Sunglasses</button>
-                <button class="tab-btn text-gray-800 hover:text-black font-medium relative transition-colors"
+                <button
+                    class="tab-btn text-sm font-semibold text-gray-700 hover:text-gray-900 relative transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 after:transition-all hover:after:w-full"
                     data-tab="eyeglasses">Eyeglasses</button>
-                <button class="tab-btn text-gray-800 hover:text-black font-medium relative transition-colors"
+                <button
+                    class="tab-btn text-sm font-semibold text-gray-700 hover:text-gray-900 relative transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-gray-900 after:transition-all hover:after:w-full"
                     data-tab="newarrivals">New Arrivals</button>
             </nav>
 
             <!-- Right Icons -->
-            <div class="flex items-center space-x-2 sm:space-x-4">
+            <div class="flex items-center space-x-3 sm:space-x-4">
+                <!-- Login/Signup Button -->
+                <button id="toggleFormBtn"
+                    class="hidden md:block px-5 py-2 text-xs font-semibold text-gray-700 hover:text-gray-900 border border-gray-300 rounded-full hover:border-gray-900 transition-all duration-300 hover:shadow-sm">
+                    LOG IN / SIGNUP
+                </button>
+
+                <!-- Wishlist Icon -->
+                <a href="wishlist.html"
+                    class="relative p-2.5 hover:bg-gray-50 rounded-full transition-all duration-300 group">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="w-5 h-5 text-gray-700 group-hover:text-red-500 transition-colors" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                    </svg>
+                    <span id="wishlist-count"
+                        class="cart-badge absolute -top-0.5 -right-0.5 bg-red-500 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center shadow-sm"
+                        style="display: none;">0</span>
+                </a>
+
+                <!-- Cart Icon -->
+                <a href="shopping-cart.html"
+                    class="relative p-2.5 hover:bg-gray-50 rounded-full transition-all duration-300 group">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="w-5 h-5 text-gray-700 group-hover:text-gray-900 transition-colors" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    <span id="cart-count"
+                        class="cart-badge absolute -top-0.5 -right-0.5 bg-gray-900 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center shadow-sm"
+                        style="display: none;">0</span>
+                </a>
+
                 <!-- Search Icon -->
-                <button id="searchButton" class="p-2 hover:text-gray-700 transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
+                <button id="searchButton" class="p-2.5 hover:bg-gray-50 rounded-full transition-all duration-300 group">
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                        class="w-5 h-5 text-gray-700 group-hover:text-gray-900 transition-colors" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
                             d="M21 21l-4.35-4.35M17 10.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" />
                     </svg>
                 </button>
 
                 <!-- Mobile menu button -->
-                <button id="menu-btn" class="md:hidden p-2 hover:bg-gray-100 rounded transition-colors">
+                <button id="menu-btn" class="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors">
                     <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
@@ -114,49 +153,58 @@
         </div>
 
         <!-- Search Bar (Hidden by default) -->
-        <div id="searchBar" class="hidden border-t border-gray-200 bg-gray-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3">
-                <div class="flex items-center space-x-2">
+        <div id="searchBar" class="hidden border-t border-gray-100 bg-white/95 backdrop-blur-md">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                <div class="flex items-center space-x-3">
                     <input type="text" placeholder="Search for sunglasses, eyeglasses..."
-                        class="flex-1 p-2 sm:p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-black">
+                        class="flex-1 px-4 py-3 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all">
                     <button
-                        class="px-4 sm:px-6 py-2 sm:py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors">Search</button>
+                        class="px-6 py-3 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-all duration-300 font-medium text-sm shadow-sm hover:shadow-md">Search</button>
                 </div>
             </div>
         </div>
 
         <!-- Dropdown Section (Desktop) -->
-        <div id="submenu" class="hidden border-t border-gray-200 bg-white">
-            <div class="max-w-5xl mx-auto px-4 sm:px-6 py-6 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 text-center">
+        <div id="submenu" class="hidden border-t border-gray-100 bg-white/95 backdrop-blur-md shadow-lg">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
             </div>
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-200 bg-white">
-            <nav class="flex flex-col py-2">
-                <button class="mobile-tab-btn text-left px-6 py-3 hover:bg-gray-50 transition-colors"
+        <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 bg-white">
+            <nav class="flex flex-col">
+                <button
+                    class="mobile-tab-btn text-left px-6 py-4 hover:bg-gray-50 transition-colors border-b border-gray-100"
                     data-tab="sunglasses">
-                    <span class="font-medium">Sunglasses</span>
+                    <span class="font-semibold text-gray-900">Sunglasses</span>
                 </button>
-                <div id="mobile-submenu-sunglasses" class="hidden bg-gray-50 px-6 py-3">
+                <div id="mobile-submenu-sunglasses" class="hidden bg-gray-50 px-6 py-4">
                     <div class="grid grid-cols-2 gap-3"></div>
                 </div>
 
-                <button class="mobile-tab-btn text-left px-6 py-3 hover:bg-gray-50 transition-colors"
+                <button
+                    class="mobile-tab-btn text-left px-6 py-4 hover:bg-gray-50 transition-colors border-b border-gray-100"
                     data-tab="eyeglasses">
-                    <span class="font-medium">Eyeglasses</span>
+                    <span class="font-semibold text-gray-900">Eyeglasses</span>
                 </button>
-                <div id="mobile-submenu-eyeglasses" class="hidden bg-gray-50 px-6 py-3">
+                <div id="mobile-submenu-eyeglasses" class="hidden bg-gray-50 px-6 py-4">
                     <div class="grid grid-cols-2 gap-3"></div>
                 </div>
 
-                <button class="mobile-tab-btn text-left px-6 py-3 hover:bg-gray-50 transition-colors"
+                <button
+                    class="mobile-tab-btn text-left px-6 py-4 hover:bg-gray-50 transition-colors border-b border-gray-100"
                     data-tab="newarrivals">
-                    <span class="font-medium">New Arrivals</span>
+                    <span class="font-semibold text-gray-900">New Arrivals</span>
                 </button>
-                <div id="mobile-submenu-newarrivals" class="hidden bg-gray-50 px-6 py-3">
+                <div id="mobile-submenu-newarrivals" class="hidden bg-gray-50 px-6 py-4">
                     <div class="grid grid-cols-2 gap-3"></div>
                 </div>
+
+                <!-- Mobile Login Button -->
+                <button id="toggleFormBtnMobile"
+                    class="text-left px-6 py-4 hover:bg-gray-50 transition-colors border-t border-gray-200 bg-gray-50">
+                    <span class="font-semibold text-sm text-gray-900">LOG IN / SIGNUP</span>
+                </button>
             </nav>
         </div>
     </header>
@@ -810,87 +858,134 @@
     </section>
     <!-- Shop Section End -->
 
-    <!-- Footer Section Begin -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 col-sm-6">
-                    <div class="footer__about">
-                        <!-- Logo - Same as Header -->
-                        <a href="/" class="block mb-4 group">
-                            <div class="flex flex-col">
-                                <span
-                                    class="text-base sm:text-lg font-medium text-white group-hover:text-gray-700 transition-colors">Z
-                                    O P T I C S</span>
-                                <span
-                                    class="text-xs tracking-[0.2em] text-white group-hover:text-gray-700 transition-colors">eyewear</span>
-                            </div>
-                        </a>
-
-                        <!-- Description -->
-                        <p class="text-gray-600 text-sm mb-4">
-                            The customer is at the heart of our unique business model, which includes design.
+    <!-- Footer Section -->
+    <footer class="bg-gray-50 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <!-- Main Footer Content -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
+                
+                <!-- Left Section - Logo & Newsletter -->
+                <div class="lg:col-span-1">
+                    <!-- Logo -->
+                    <div class="mb-6">
+                        <h2 class="text-3xl font-black text-gray-900 tracking-tight mb-2">
+                            bo<span class="text-red-600">A</span>t
+                        </h2>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            India's fastest growing audio & wearables brand. The most incredible range of wireless earphones, earbuds, headphones, smart watches, and home audio.
                         </p>
+                    </div>
 
-                        <!-- Payment Icons -->
-                        <a href="#" class="inline-block">
-                            <img src="img/payment.png" alt="Payment Methods">
+                    <!-- Newsletter -->
+                    <div class="mb-6">
+                        <h3 class="text-base font-semibold text-gray-900 mb-3">Subscribe to our email alerts!</h3>
+                        <form class="flex items-center bg-white rounded-lg overflow-hidden shadow-sm border border-gray-200">
+                            <input 
+                                type="email" 
+                                placeholder="Enter your email address" 
+                                class="flex-1 px-4 py-2.5 text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                            >
+                            <button 
+                                type="submit" 
+                                class="px-4 py-2.5 bg-red-600 text-white hover:bg-red-700 transition-colors flex-shrink-0"
+                            >
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="flex items-center space-x-4">
+                        <a href="#" class="text-gray-600 hover:text-red-600 transition-colors" aria-label="Facebook">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-red-600 transition-colors" aria-label="Twitter">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-red-600 transition-colors" aria-label="Instagram">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-600 hover:text-red-600 transition-colors" aria-label="YouTube">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
                         </a>
                     </div>
                 </div>
-                <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
-                    <div class="footer__widget">
-                        <h6>Shopping</h6>
-                        <ul>
-                            <li><a href="#">Clothing Store</a></li>
-                            <li><a href="#">Trending Shoes</a></li>
-                            <li><a href="#">Accessories</a></li>
-                            <li><a href="#">Sale</a></li>
-                        </ul>
-                    </div>
+
+                <!-- Shop Column -->
+                <div>
+                    <h4 class="font-semibold text-gray-900 mb-4 text-base">Shop</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">True Wireless Earbuds</a></li>
+                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Wireless Headphones</a></li>
+                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Wired Headphones</a></li>
+                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Wireless Speakers</a></li>
+                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Home Audio</a></li>
+                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Mobile Accessories</a></li>
+                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Smart Watches</a></li>
+                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">TRebel</a></li>
+                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Misfit Trimmers</a></li>
+                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Refer & Earn</a></li>
+                    </ul>
                 </div>
-                <div class="col-lg-2 col-md-3 col-sm-6">
-                    <div class="footer__widget">
-                        <h6>Shopping</h6>
-                        <ul>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Payment Methods</a></li>
-                            <li><a href="#">Delivary</a></li>
-                            <li><a href="#">Return & Exchanges</a></li>
-                        </ul>
-                    </div>
+
+                <!-- Help Column -->
+                <div>
+                    <h4 class="font-semibold text-gray-900 mb-4 text-base">Help</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Track Your Order</a></li>
+                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Warranty & Support</a></li>
+                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Return Policy</a></li>
+                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Service Centers</a></li>
+                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Bulk Orders</a></li>
+                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Why Buy Direct</a></li>
+                    </ul>
                 </div>
-                <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
-                    <div class="footer__widget">
-                        <h6>NewLetter</h6>
-                        <div class="footer__newslatter">
-                            <p>Be the first to know about new arrivals, look books, sales & promos!</p>
-                            <form action="#">
-                                <input type="text" placeholder="Your email">
-                                <button type="submit"><span class="icon_mail_alt"></span></button>
-                            </form>
-                        </div>
-                    </div>
+
+                <!-- Company Column -->
+                <div>
+                    <h4 class="font-semibold text-gray-900 mb-4 text-base">Company</h4>
+                    <ul class="space-y-2.5">
+                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">About boAt</a></li>
+                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">News</a></li>
+                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Read Our Blog</a></li>
+                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Security</a></li>
+                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Investor Relations</a></li>
+                        <li><a href="#" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Social Responsibility</a></li>
+                    </ul>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <div class="footer__copyright__text">
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        <p>Copyright ©
-                            <script>
-                                document.write(new Date().getFullYear());
-                            </script>2025
-                            All rights reserved | This template is made with <i class="fa fa-heart-o"
-                                aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Zoptics</a>
-                        </p>
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+
+            <!-- Footer Bottom -->
+            <div class="border-t border-gray-200 pt-8 mt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <div class="flex flex-wrap justify-center md:justify-start gap-4 md:gap-6 text-sm">
+                        <a href="#" class="text-gray-600 hover:text-red-600 transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-gray-600 hover:text-red-600 transition-colors">Terms of Use</a>
+                        <a href="#" class="text-gray-600 hover:text-red-600 transition-colors">Warranty Policy</a>
+                        <a href="#" class="text-gray-600 hover:text-red-600 transition-colors">D2D Paid Repair Service Policy</a>
                     </div>
+                    <p class="text-sm text-gray-600 text-center md:text-right">
+                        Copyright © <span id="year"></span> All rights reserved | Made with <span class="text-red-600">❤</span> by boAt
+                    </p>
                 </div>
             </div>
         </div>
     </footer>
-    <!-- Footer Section End -->
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 
     <!-- Search Begin -->
     <div class="search-model">
@@ -903,6 +998,68 @@
     </div>
     <!-- Search End -->
 
+    <!-- Login/Signup Modal Begin -->
+    <div id="formModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md p-6 md:p-8 animate-fadeIn">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold" id="formTitle">Login</h2>
+                <button id="closeModal" class="text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+            </div>
+
+            <!-- Login Form -->
+            <div id="loginBox" class="form-box">
+                <div class="mb-5">
+                    <label class="block text-sm font-medium mb-2">Username</label>
+                    <input type="text" placeholder="Enter username"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <div class="mb-5">
+                    <label class="block text-sm font-medium mb-2">Password</label>
+                    <input type="password" placeholder="Enter password"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <button
+                    class="w-full py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-medium">Login</button>
+                <p class="text-sm mt-4 text-center text-gray-600">
+                    Don't have an account?
+                    <a onclick="showSignup()" class="text-indigo-600 hover:underline cursor-pointer">Sign Up</a>
+                </p>
+            </div>
+
+            <!-- Signup Form -->
+            <div id="signupBox" class="form-box hidden">
+                <div class="mb-5">
+                    <label class="block text-sm font-medium mb-2">Full Name</label>
+                    <input type="text" placeholder="Enter full name"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <div class="mb-5">
+                    <label class="block text-sm font-medium mb-2">Email</label>
+                    <input type="email" placeholder="Enter email"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <div class="mb-5">
+                    <label class="block text-sm font-medium mb-2">Username</label>
+                    <input type="text" placeholder="Choose username"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <div class="mb-5">
+                    <label class="block text-sm font-medium mb-2">Password</label>
+                    <input type="password" placeholder="Create password"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                </div>
+                <button
+                    class="w-full py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-medium">Sign
+                    Up</button>
+                <p class="text-sm mt-4 text-center text-gray-600">
+                    Already have an account?
+                    <a onclick="showLogin()" class="text-indigo-600 hover:underline cursor-pointer">Login</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- Login/Signup Modal End -->
+
     <!-- Js Plugins -->
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
@@ -914,6 +1071,112 @@
     <script src="js/mixitup.min.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+
+    <!-- Cart and Wishlist Management -->
+    <script src="js/cart.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script src="js/shared-utils.js"></script>
+
+    <!-- Custom Scripts for Header/Modal -->
+    <script>
+        // Login/Signup Modal Functionality
+        const toggleFormBtn = document.getElementById('toggleFormBtn');
+        const toggleFormBtnMobile = document.getElementById('toggleFormBtnMobile');
+        const formModal = document.getElementById('formModal');
+        const closeModal = document.getElementById('closeModal');
+        const loginBox = document.getElementById('loginBox');
+        const signupBox = document.getElementById('signupBox');
+        const formTitle = document.getElementById('formTitle');
+
+        const openModal = () => {
+            if (formModal) {
+                formModal.classList.remove('hidden');
+                formModal.classList.add('flex');
+            }
+        };
+
+        if (toggleFormBtn) {
+            toggleFormBtn.addEventListener('click', openModal);
+        }
+
+        if (toggleFormBtnMobile) {
+            toggleFormBtnMobile.addEventListener('click', () => {
+                openModal();
+                // Close mobile menu if open
+                const mobileMenu = document.getElementById('mobile-menu');
+                if (mobileMenu) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        }
+
+        if (closeModal && formModal) {
+            closeModal.addEventListener('click', () => {
+                formModal.classList.add('hidden');
+                formModal.classList.remove('flex');
+            });
+        }
+
+        // Close modal when clicking outside
+        if (formModal) {
+            formModal.addEventListener('click', (e) => {
+                if (e.target === formModal) {
+                    formModal.classList.add('hidden');
+                    formModal.classList.remove('flex');
+                }
+            });
+        }
+
+        // Form switching functions
+        function showSignup() {
+            if (loginBox && signupBox && formTitle) {
+                loginBox.classList.add('hidden');
+                signupBox.classList.remove('hidden');
+                formTitle.textContent = 'Sign Up';
+            }
+        }
+
+        function showLogin() {
+            if (loginBox && signupBox && formTitle) {
+                signupBox.classList.add('hidden');
+                loginBox.classList.remove('hidden');
+                formTitle.textContent = 'Login';
+            }
+        }
+
+        // Make functions globally available
+        window.showSignup = showSignup;
+        window.showLogin = showLogin;
+    </script>
+
+    <!-- Custom Styles for Animations -->
+    <style>
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 0.4s ease;
+        }
+
+        /* Ensure modal is centered */
+        #formModal.flex {
+            display: flex;
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </body>
 
 </html>
