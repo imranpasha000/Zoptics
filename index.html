@@ -129,7 +129,8 @@
                 </a>
 
                 <!-- Search Icon -->
-                <button id="searchButton" class="p-2.5 hover:bg-gray-50 rounded-full transition-all duration-300 group">
+                <button type="button" id="searchButton"
+                    class="p-2.5 hover:bg-gray-50 rounded-full transition-all duration-300 group">
                     <svg xmlns="http://www.w3.org/2000/svg"
                         class="w-5 h-5 text-gray-700 group-hover:text-gray-900 transition-colors" fill="none"
                         viewBox="0 0 24 24" stroke="currentColor">
@@ -156,12 +157,12 @@
 
         <!-- Search Bar (Hidden by default) -->
         <div id="searchBar" class="hidden border-t border-gray-100 bg-white/95 backdrop-blur-md">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="max-w-3xl mx-auto px-2 sm:px-4 lg:px-6 py-2">
                 <div class="flex items-center space-x-3">
-                    <input type="text" placeholder="Search for sunglasses, eyeglasses..."
-                        class="flex-1 px-4 py-3 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all">
-                    <button
-                        class="px-6 py-3 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-all duration-300 font-medium text-sm shadow-sm hover:shadow-md">Search</button>
+                    <input type="text" id="searchInput" placeholder="Search for sunglasses, eyeglasses..."
+                        class="flex-1 px-2 py-1 border border-gray-200 rounded-full focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all">
+                    <button id="searchSubmitBtn"
+                        class="px-2 py-1 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-all duration-300 font-medium text-sm shadow-sm hover:shadow-md">Search</button>
                 </div>
             </div>
         </div>
@@ -991,177 +992,299 @@
                 <div class="lg:col-span-6">
                     <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">A Showcase of Trusted Brands</h2>
                     <p class="text-lg text-gray-600">
-                        A responsive ticker displaying brand logos, designed to adapt seamlessly to any screen size with engaging hover effects.
+                        A responsive ticker displaying brand logos, designed to adapt seamlessly to any screen size with
+                        engaging hover effects.
                     </p>
                 </div>
-                
+
                 <!-- Right Side: Brand Tickers -->
                 <div class="lg:col-span-6">
-                    <div class="vertical-ticker-container h-[400px] md:h-[450px] lg:h-[500px] flex flex-col md:flex-row gap-4 md:gap-[2.85vw] overflow-hidden">
-                <!-- Vertical Ticker: Slider UP -->
-                <div class="vertical-ticker-slider flex-1 h-full">
-                    <div id="vertical-ticker-up" class="swiper h-full w-full">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-1-0.svg" alt="Tochiba" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-1-1.svg" alt="Tochiba" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-2-0.svg" alt="Fujitsu" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-2-1.svg" alt="Fujitsu" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-3-0.svg" alt="Philips" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-3-1.svg" alt="Philips" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-4-0.svg" alt="Casio" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-4-1.svg" alt="Casio" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-5-0.svg" alt="Nichicon" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-5-1.svg" alt="Nichicon" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-6-0.svg" alt="Sony" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-6-1.svg" alt="Sony" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
-                                </div>
-                            </div>
-                            <!-- Slides copies for seamless loop -->
-                            <div class="swiper-slide">
-                                <div class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-1-0.svg" alt="Tochiba" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-1-1.svg" alt="Tochiba" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-2-0.svg" alt="Fujitsu" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-2-1.svg" alt="Fujitsu" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-3-0.svg" alt="Philips" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-3-1.svg" alt="Philips" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-4-0.svg" alt="Casio" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-4-1.svg" alt="Casio" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-5-0.svg" alt="Nichicon" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-5-1.svg" alt="Nichicon" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-6-0.svg" alt="Sony" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-6-1.svg" alt="Sony" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
+                    <div
+                        class="vertical-ticker-container h-[400px] md:h-[450px] lg:h-[500px] flex flex-col md:flex-row gap-4 md:gap-[2.85vw] overflow-hidden">
+                        <!-- Vertical Ticker: Slider UP -->
+                        <div class="vertical-ticker-slider flex-1 h-full">
+                            <div id="vertical-ticker-up" class="swiper h-full w-full">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div
+                                            class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-1-0.svg"
+                                                alt="Tochiba"
+                                                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-1-1.svg"
+                                                alt="Tochiba"
+                                                class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div
+                                            class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-2-0.svg"
+                                                alt="Fujitsu"
+                                                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-2-1.svg"
+                                                alt="Fujitsu"
+                                                class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div
+                                            class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-3-0.svg"
+                                                alt="Philips"
+                                                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-3-1.svg"
+                                                alt="Philips"
+                                                class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div
+                                            class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-4-0.svg"
+                                                alt="Casio"
+                                                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-4-1.svg"
+                                                alt="Casio"
+                                                class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div
+                                            class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-5-0.svg"
+                                                alt="Nichicon"
+                                                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-5-1.svg"
+                                                alt="Nichicon"
+                                                class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div
+                                            class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-6-0.svg"
+                                                alt="Sony"
+                                                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-6-1.svg"
+                                                alt="Sony"
+                                                class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
+                                        </div>
+                                    </div>
+                                    <!-- Slides copies for seamless loop -->
+                                    <div class="swiper-slide">
+                                        <div
+                                            class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-1-0.svg"
+                                                alt="Tochiba"
+                                                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-1-1.svg"
+                                                alt="Tochiba"
+                                                class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div
+                                            class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-2-0.svg"
+                                                alt="Fujitsu"
+                                                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-2-1.svg"
+                                                alt="Fujitsu"
+                                                class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div
+                                            class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-3-0.svg"
+                                                alt="Philips"
+                                                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-3-1.svg"
+                                                alt="Philips"
+                                                class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div
+                                            class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-4-0.svg"
+                                                alt="Casio"
+                                                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-4-1.svg"
+                                                alt="Casio"
+                                                class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div
+                                            class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-5-0.svg"
+                                                alt="Nichicon"
+                                                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-5-1.svg"
+                                                alt="Nichicon"
+                                                class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div
+                                            class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-6-0.svg"
+                                                alt="Sony"
+                                                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-6-1.svg"
+                                                alt="Sony"
+                                                class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-                <!-- Vertical Ticker: Slider DOWN -->
-                <div class="vertical-ticker-slider flex-1 h-full">
-                    <div id="vertical-ticker-down" class="swiper h-full w-full">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-7-0.svg" alt="Daikin" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-7-1.svg" alt="Daikin" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-8-0.svg" alt="Kyocera" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-8-1.svg" alt="Kyocera" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-9-0.svg" alt="Omron" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-9-1.svg" alt="Omron" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-10-0.svg" alt="Hoya" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-10-1.svg" alt="Hoya" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-11-0.svg" alt="Olympus" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-11-1.svg" alt="Olympus" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-12-0.svg" alt="Fujikura" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-12-1.svg" alt="Fujikura" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
-                                </div>
-                            </div>
-                            <!-- Slides copies for seamless loop -->
-                            <div class="swiper-slide">
-                                <div class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-7-0.svg" alt="Daikin" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-7-1.svg" alt="Daikin" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-8-0.svg" alt="Kyocera" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-8-1.svg" alt="Kyocera" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-9-0.svg" alt="Omron" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-9-1.svg" alt="Omron" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-10-0.svg" alt="Hoya" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-10-1.svg" alt="Hoya" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-11-0.svg" alt="Olympus" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-11-1.svg" alt="Olympus" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-12-0.svg" alt="Fujikura" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
-                                    <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-12-1.svg" alt="Fujikura" class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
+                        <!-- Vertical Ticker: Slider DOWN -->
+                        <div class="vertical-ticker-slider flex-1 h-full">
+                            <div id="vertical-ticker-down" class="swiper h-full w-full">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div
+                                            class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-7-0.svg"
+                                                alt="Daikin"
+                                                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-7-1.svg"
+                                                alt="Daikin"
+                                                class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div
+                                            class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-8-0.svg"
+                                                alt="Kyocera"
+                                                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-8-1.svg"
+                                                alt="Kyocera"
+                                                class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div
+                                            class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-9-0.svg"
+                                                alt="Omron"
+                                                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-9-1.svg"
+                                                alt="Omron"
+                                                class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div
+                                            class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-10-0.svg"
+                                                alt="Hoya"
+                                                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-10-1.svg"
+                                                alt="Hoya"
+                                                class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div
+                                            class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-11-0.svg"
+                                                alt="Olympus"
+                                                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-11-1.svg"
+                                                alt="Olympus"
+                                                class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div
+                                            class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-12-0.svg"
+                                                alt="Fujikura"
+                                                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-12-1.svg"
+                                                alt="Fujikura"
+                                                class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
+                                        </div>
+                                    </div>
+                                    <!-- Slides copies for seamless loop -->
+                                    <div class="swiper-slide">
+                                        <div
+                                            class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-7-0.svg"
+                                                alt="Daikin"
+                                                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-7-1.svg"
+                                                alt="Daikin"
+                                                class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div
+                                            class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-8-0.svg"
+                                                alt="Kyocera"
+                                                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-8-1.svg"
+                                                alt="Kyocera"
+                                                class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div
+                                            class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-9-0.svg"
+                                                alt="Omron"
+                                                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-9-1.svg"
+                                                alt="Omron"
+                                                class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div
+                                            class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-10-0.svg"
+                                                alt="Hoya"
+                                                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-10-1.svg"
+                                                alt="Hoya"
+                                                class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div
+                                            class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-11-0.svg"
+                                                alt="Olympus"
+                                                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-11-1.svg"
+                                                alt="Olympus"
+                                                class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div
+                                            class="vertical-ticker-slide-content relative w-[150px] md:w-[15.625vw] aspect-[300/205] rounded-lg overflow-hidden backdrop-blur-[50px] group">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-12-0.svg"
+                                                alt="Fujikura"
+                                                class="absolute inset-0 w-full h-full object-cover transition-opacity duration-600 ease-out">
+                                            <img src="https://bato-web-agency.github.io/bato-shared/img/ticker-1/image-12-1.svg"
+                                                alt="Fujikura"
+                                                class="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-600 ease-out">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 </div>
             </div>
-        </div>
     </section>
     <!-- Brand Ticker Section End -->
 
@@ -1356,18 +1479,25 @@
                 <div>
                     <h4 class="font-semibold text-gray-900 mb-4 text-base">Company</h4>
                     <ul class="space-y-2.5">
-                        <li><a href="about-boat.html" class="text-gray-600 text-sm hover:text-red-600 transition-colors">About
+                        <li><a href="about-boat.html"
+                                class="text-gray-600 text-sm hover:text-red-600 transition-colors">About
                                 boAt</a></li>
-                        <li><a href="news.html" class="text-gray-600 text-sm hover:text-red-600 transition-colors">News</a></li>
-                        <li><a href="read-our-blog.html" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Read Our
+                        <li><a href="news.html"
+                                class="text-gray-600 text-sm hover:text-red-600 transition-colors">News</a></li>
+                        <li><a href="read-our-blog.html"
+                                class="text-gray-600 text-sm hover:text-red-600 transition-colors">Read Our
                                 Blog</a></li>
-                        <li><a href="careers.html" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Careers</a>
+                        <li><a href="careers.html"
+                                class="text-gray-600 text-sm hover:text-red-600 transition-colors">Careers</a>
                         </li>
-                        <li><a href="security.html" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Security</a>
+                        <li><a href="security.html"
+                                class="text-gray-600 text-sm hover:text-red-600 transition-colors">Security</a>
                         </li>
-                        <li><a href="investor-relations.html" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Investor
+                        <li><a href="investor-relations.html"
+                                class="text-gray-600 text-sm hover:text-red-600 transition-colors">Investor
                                 Relations</a></li>
-                        <li><a href="social-responsibility.html" class="text-gray-600 text-sm hover:text-red-600 transition-colors">Social
+                        <li><a href="social-responsibility.html"
+                                class="text-gray-600 text-sm hover:text-red-600 transition-colors">Social
                                 Responsibility</a></li>
                     </ul>
                 </div>
@@ -1662,6 +1792,154 @@
                 this.classList.remove('text-gray-600');
             });
         });
+
+        // Search Bar Toggle and Product Search Functionality
+        function initSearchFunctionality() {
+            const searchButton = document.getElementById('searchButton');
+            const searchBar = document.getElementById('searchBar');
+            const searchInput = document.getElementById('searchInput');
+            const searchSubmitBtn = document.getElementById('searchSubmitBtn');
+
+            if (!searchButton || !searchBar) {
+                console.error('Search elements not found');
+                return;
+            }
+
+            // Toggle search bar on search icon click
+            searchButton.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                const isOpening = searchBar.classList.contains('hidden');
+                searchBar.classList.toggle('hidden');
+
+                // Close other menus when opening search
+                if (isOpening) {
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (mobileMenu) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                    // Close dropdown submenu if open
+                    const submenu = document.getElementById('submenu');
+                    if (submenu) {
+                        submenu.classList.add('hidden');
+                    }
+                }
+
+                // Focus on input when search bar is opened
+                if (!searchBar.classList.contains('hidden') && searchInput) {
+                    setTimeout(() => {
+                        searchInput.focus();
+                    }, 100);
+                }
+            });
+
+            // Handle product search
+            const performSearch = (searchTerm) => {
+                // Get all product items
+                const productItems = document.querySelectorAll('.product__item');
+
+                if (!searchTerm || searchTerm.trim() === '') {
+                    // Show all products if search is empty
+                    productItems.forEach(item => {
+                        const mixElement = item.closest('.mix');
+                        if (mixElement) {
+                            mixElement.style.display = '';
+                        }
+                    });
+                    return;
+                }
+
+                const searchLower = searchTerm.toLowerCase().trim();
+                let hasResults = false;
+
+                // Filter products based on search term
+                productItems.forEach(item => {
+                    const productName = item.dataset.productName || item.querySelector('h6')?.textContent?.trim() || '';
+                    const productNameLower = productName.toLowerCase();
+
+                    const mixElement = item.closest('.mix');
+                    if (mixElement) {
+                        // Check if product name contains search term
+                        if (productNameLower.includes(searchLower)) {
+                            mixElement.style.display = '';
+                            hasResults = true;
+                        } else {
+                            mixElement.style.display = 'none';
+                        }
+                    }
+                });
+
+                // Scroll to product section if there are results
+                if (hasResults) {
+                    const productSection = document.querySelector('.product__filter');
+                    if (productSection) {
+                        productSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            };
+
+            // Search on button click
+            if (searchSubmitBtn) {
+                searchSubmitBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    if (searchInput) {
+                        performSearch(searchInput.value);
+                    }
+                });
+            }
+
+            // Real-time search as you type
+            if (searchInput) {
+                let searchTimeout;
+                searchInput.addEventListener('input', function () {
+                    // Debounce search to avoid too many searches while typing
+                    clearTimeout(searchTimeout);
+                    searchTimeout = setTimeout(() => {
+                        performSearch(this.value);
+                    }, 300); // Wait 300ms after user stops typing
+                });
+
+                // Search on Enter key press
+                searchInput.addEventListener('keypress', function (e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        clearTimeout(searchTimeout);
+                        performSearch(this.value);
+                    }
+                });
+
+                // Close search bar on Escape key
+                searchInput.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape') {
+                        this.value = '';
+                        performSearch('');
+                        searchBar.classList.add('hidden');
+                    }
+                });
+            }
+
+            // Close search bar when clicking outside
+            document.addEventListener('click', function (e) {
+                if (searchBar && !searchBar.contains(e.target) && !searchButton.contains(e.target)) {
+                    if (!searchBar.classList.contains('hidden')) {
+                        // Only close if search input is empty or user clicked outside
+                        if (!searchInput || searchInput.value.trim() === '') {
+                            searchBar.classList.add('hidden');
+                        }
+                    }
+                }
+            });
+        }
+
+        // Initialize search functionality
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initSearchFunctionality);
+        } else {
+            // DOM is already loaded
+            initSearchFunctionality();
+        }
 
         // Vertical Ticker Functionality
         document.addEventListener("DOMContentLoaded", () => {
